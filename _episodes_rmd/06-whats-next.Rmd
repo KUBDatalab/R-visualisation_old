@@ -1,0 +1,34 @@
+---
+title: "Whats next?"
+teaching: 10
+exercises: 5
+questions:
+- "FIX ME"
+objectives:
+- "FIX ME"
+keypoints:
+- "FIX ME"
+
+source: Rmd
+---
+
+```{r, include = FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("00-")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Other online courses
+
+Other kub-datalab courses
+
+play around with 30 days of plots eller hvad vi nu har
+
+Udvidelser etc til ggplot
+
+
+
+{% include links.md %}
