@@ -18,17 +18,6 @@ source: Rmd
 
 
 
-struktur
-
-Første plot
-
-Forskellige typer af plots
-
-facettering
-
-theming
-
-patchwork
 
 
 ## Getting ready to plot!
