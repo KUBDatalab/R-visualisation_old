@@ -31,6 +31,8 @@ og hvis vi ændrer på det underliggende data.
 
 ggplot2 is the package. The funcion is called ggplot(). 
 
+https://pkg.garrickadenbuie.com/gentle-ggplot2/#153
+
 ggplot2 works best with data in a socalled long format, ie one column for 
 each (and every) variable, and a row for every observation.
 
