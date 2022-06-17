@@ -28,10 +28,176 @@ og hvis vi ændrer på det underliggende data.
 
 ggplot2 is the package. The funcion is called ggplot(). 
 
+https://pkg.garrickadenbuie.com/gentle-ggplot2/#153
+
 ggplot2 works best with data in a socalled long format, ie one column for 
 each (and every) variable, and a row for every observation.
 
 It is highly recommended to structure data in this way.
+
+How are visuals expressed in words?
+
+Data - to be visualised
+
+Geometric objects that appear on the plot
+
+Aesthetic mappings from data to component in graph
+
+Statistics - transforming data on its way to the graph
+
+Coordinates - that organises the location of geometric objects
+
+Scales - defining the range of values for aesthetics
+
+Facets - grouping data into subplots.
+
+
+
+Data:
+ggplot(data)
+
+Tidy data:
+Each variable forms a column
+
+Each observation forms a row
+
+Each observational unit forms a table
+
+
+Begin by asking:
+
+What information do I want to use in my 
+visualisation
+
+Is that data contained in one column/row
+for a given data point?
+
+Måske et eksempel.
+
+Aesthetics + aes()
+
+Vis hvad der mappes til hvad i et gennemgående eksempel. 
+year -> x
+pop -> y
+country -> farve, form noget
+
+videre til:
+aes(x = year,
+    y = pop,
+    color = country)
+    
+    
++ geom_*() - der er et fint plot #36
+
+Denn figur taget ret direkte. Det er heller
+ikke givet at det er den jeg er har lyst til at vise.
+
+
+~~~
+Error in theme_bw(): could not find function "theme_bw"
+~~~
+{: .error}
+
+
+
+~~~
+Error in data_frame(y = rnorm(10), x = 1:10): could not find function "data_frame"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(x, y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(x, y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(x, y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(y = y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in ggplot(df_geom, aes(y)): could not find function "ggplot"
+~~~
+{: .error}
+
+
+
+~~~
+Error in map(g_geom, ~. + minimal_theme): could not find function "map"
+~~~
+{: .error}
+
+
+
+~~~
+Error in grobs[[i]]: subscript out of bounds
+~~~
+{: .error}
+
+
+Jeg ved ikke hvordan 
+det her kommer itl at se ud rendret, men:
+| Type | Function |
+|:----:|:--------:|
+| Point | `geom_point()` |
+| Line | `geom_line()` |
+| Bar | `geom_bar()`, `geom_col()` |
+| Histogram | `geom_histogram()` |
+| Regression | `geom_smooth()` |
+| Boxplot | `geom_boxplot()` |
+| Text | `geom_text()` |
+| Vert./Horiz. Line | `geom_{vh}line()` |
+| Count | `geom_count()` |
+| Density | `geom_density()` |
+
+
+
+Og mange flerE:
+
+~~~
+lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE): could not find function "%>%"
+~~~
+{: .error}
+
+Og så skal vi måske nappe et plot, som vi stille og roligt tilføjer ting til.
+
+det er indtil #65 i kilden. Og så er vi 
+dels ved at være der, dels til at dykke
+ned i resten af dem.
 
 EKSEMPEL PÅ STRUKTUREN
 
