@@ -18,9 +18,231 @@ source: Rmd
 
 
 
-ggplot2 er en (af flere) pakker i R, der understøtter plots.
+## The grammar of graphics
 
-It provides a programmatic interface to specifying which variables to plot, how to display them, and to adjusting their visual properties.
+Plotting using ggplot2 is based on "The Grammar of Graphics" 
+https://link.springer.com/book/10.1007/0-387-28695-0, a theoretical treatment of how 
+to talk about and conceptualize plots by Leland Wilkinson.
+
+We do not need to know or understand all details of this 620 page book. But some
+weird naming conventions follows from this.
+
+What we do need to know, is that based on the grammar of graphics, the layered
+structure of a plot using ggplot, is build like this:
+
+ggplot(data = <DATA>) +
+<GEOM_FUNCTION>(mapping = aes(<MAPPINGS>),
+stat = <STAT>, position = <POSITION>) +
+COORDINATE_FUNCTION +
+FACET_FUNCTION +
+SCALE_FUNCTION +
+THEME_FUNCTION.
+
+
+We are going to cover each element in the following.
+
+## ggplot in it self
+
+The first thing we need to provide for ggplot is some data. We are working with
+the diamond dataset:
+
+~~~
+ggplot(data = diamonds)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds): could not find function "ggplot"
+~~~
+{: .error}
+This in itself produces an extremely boring plot. But it is a plot!. What is 
+missing is information on what exactly it is in the dataset we are trying to plot.
+How should our data be *mapped* to the area of our plot? Or, what should we 
+have on the X-axis, and what should be on the Y-axis?
+
+We provide that information to ggplot using the *mapping* argument to the 
+ggplot function:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price))
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price)): could not find function "ggplot"
+~~~
+{: .error}
+
+This specifies that we want the carat-value on the x-axis, and the value, price, 
+of the diamond on the y-axis. 
+
+We are not actually seeing any data, because we have not specified the way the
+individual datapoints should be plotted. 
+
+We are going to use points, in order to make a classic scatter plot. We do that
+by adding a geom_ function to our plot:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+  geom_point()
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price)): could not find function "ggplot"
+~~~
+{: .error}
+Note that in the template shown above, mapping was placed in the <GEOM_FUNCTION>
+rather than in the ggplot function. If we place the mapping in the ggplot function
+that mapping will be inherited by the functions we add later, unless we specify
+something different.
+
+That means that:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+  geom_point()
+~~~
+{: .language-r}
+
+and
+
+~~~
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price))
+~~~
+{: .language-r}
+
+will yield the same result.
+
+We might want to colour the points in the plot. And we might want to colour them
+differently, based on some value, eg the color.
+
+That means, that we now want to map the color of a particular diamond, to a colour
+in our plot. And therefore, we need to add a colour argument to our 
+mapping:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point()
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+Not surprisingly, the "best" color, D have higher prices than the "worst"
+color, "J".
+
+There are a lot of diamonds. So the individual points we see, might actually
+be a lot of different points lying on top of each other. If we add an argument
+"alpha" to the geom_point function, we can adjust how the points are plotted,
+in this case the transparency of the points.
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.1)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+Similarly we can control the size and shape of the points, by providing the 
+arguments *size* and *shape* to the geom_point function respectively.
+
+The coordinate system can be changed. If we want to flip the coordinates, we
+could interchange the x and y values in the mapping argument.
+Or we could add a coordinate function that changes the coordinate system:
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  coord_flip()
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+Other coord_ functions exists, the most commonly used are coord_flip and coord_polar:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  coord_polar()
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+That might not be that useful working with diamonds.
+
+### FACET_FUNCTION
+
+There are more variables in this dataset. But it becomes increasingly difficult
+to add information to a two dimensional plot. One way to overcome this might be to 
+make more than one plot, based on values in the dataset.
+
+This is called facetting:
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_wrap(~clarity)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_grid(clarity ~color)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+
+### SCALE_FUNCTION
+
+
+
+### THEME_FUNCTION
+
+
 
 The structure of plots generated by ggplot2 allows us to change plot type from eg. barplot to scatterplots with only minimal changes. 
 

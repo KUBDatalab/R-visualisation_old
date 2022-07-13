@@ -17,6 +17,35 @@ source: Rmd
 
 
 
+## This is not an introduction to R
+
+This is a course on how to plot data using the ggplot2 library in R.
+
+If you have no previous experience with R, you will probably not have a 
+good experience in this course.
+
+This course assumes a certain level of knowledge about R. We are not going to cover the basics, and you are expected to know how to use the following functionalities in R before starting this course.
+
+Have R and R-studio installed. Alternatively run everything on rstudio.cloud
+Know how to assign values to variables
+know what a function is, and how we pass input and parameters to it
+be familiar with the %>% operator
+know the basic verbs from dplyr of the tidyverse: select filter mutate arrange summarise
+be familiar with dataframes
+know how to install and load packages
+comments 
+doing math on variables 
+Get the concept of vectors 
+subsetting vectors and dataframes 
+logical tests 
+NA 
+read in data from a csv/excel
+
+If any of these topics are unfamiliar, we strongly recommend that you either take one of our introductory courses, read up on the curriculum of one of them, or follow one of the many amazing courses you can find online, before taking this course.
+
+
+Tag et af vores introducerende kurser LINKS før du melder dig til her.
+
 
 
 
@@ -63,24 +92,6 @@ library(tidyverse)
 ~~~
 {: .output}
 
-## Next 
-
-Vi arbejder videre baseret på andre ting. Derfor. Du skal vide hvad en variabel er, hvordan vi tilføjer og ændrer data i sådan en.
-
-Hvordan du indlæser csv-filer i R og hvordan en dataframe ser ud.
-
-Brugen af pipen %>% skal være kendt
-
-De grundlæggende datamanipulationsværktøjer fra dplyr-pakken
-
-- select
-- filter
-- mutate
-- group_by
-- summarise
-
-skal også være på plads. Tag et af vores introducerende kurser LINKS før du melder dig til her.
-
 ## Hvilke data arbejder vi med
 
 Vi arbejder med en klassiker. Diamanter.
@@ -119,6 +130,132 @@ og parametre på dem:
 - x længde i mm
 - y bredde i mm
 - z dybde i mm
+
+## One introductory element in R
+
+Factors
+
+One concept that we do not cover in our introductory courses is *factors*.
+
+Factors are the R way of handling categorical variables. Categorical variables,
+also known as qualitative variables, are variabels that can take on one and only
+one, of a limited, usually fixed, number of possible values. 
+
+Classical examples are the roll of a six-sided die, that can only have one of the
+possible outcomes of 1, 2, 3, 4, 5 or 6. The role in reproduction for a mammal
+can be only female or male. Either your cell phone has power. Or it dont.
+
+These are examples of intrinsic categorical values. 
+
+We might also discretize continous variables, like how much battery is left on a 
+cell phone. The actual value might be 55%. But we are recording only levels of 
+0%, 25%, 50%, 75% and 100%. And in that case we will probably record the categorical
+value as 50%.
+
+With the data we are working with here, the cut of a diamond can be either
+Fair, Good, Very Good, Premium and Ideal. 
+
+These are categorical values. The cut of a diamond is either Fair or not-Fair.
+
+Let us take a look at the actual values of the cut variable (of the first 6 
+observations) in our dataset:
+
+~~~
+head(diamonds$cut)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Fair < Good < Very Good < Premium < Ideal
+~~~
+{: .output}
+We see the values. And we also see that these values have *levels*, the six
+categorical values that the cut of a diamond can have.
+
+If we try to convert the values of the cut to numerical values, we can see how 
+these values are actually stored by R:
+
+
+~~~
+as.numeric(head(diamonds$cut))
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] 5 4 2 4 2 3
+~~~
+{: .output}
+R handles categorical values, factors, by assigning an integer to each value.
+5 to "ideal", 4 to "Premium", 2 to "Good" etc. These are the values stored.
+
+Associated with these values are *levels*
+
+
+~~~
+levels(diamonds$cut)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] "Fair"      "Good"      "Very Good" "Premium"   "Ideal"    
+~~~
+{: .output}
+
+And they appear in a specific order. 
+
+The cut of diamonds are actually not only categorical, but also *ordinal*, meaning
+that they are not just in a specific order, but that one level is "better" than
+another. We see an indication here:
+
+
+~~~
+head(diamonds$cut)
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Fair < Good < Very Good < Premium < Ideal
+~~~
+{: .output}
+Where the "<" indicates that "Good" is better than "Fair", but worse than 
+"Very good".
+
+We can change the order of the levels of a factor using functions from the 
+*forcats* library:
+
+
+~~~
+fct_relevel(diamonds$cut, "Good", "Ideal") %>% 
+  head()
+~~~
+{: .language-r}
+
+
+
+~~~
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Good < Ideal < Fair < Very Good < Premium
+~~~
+{: .output}
+Now the order is changed, because we have specified that the first two levels 
+should be "Good", followed by "Ideal".
+
+The forcats library have many other functions for working with factors. 
+
+Regarding plotting in R, the important thing to know is that the order of things
+in our plots are typically controlled by the order of factors, and that we can
+change that order to suit our needs.
+
 
 
 
