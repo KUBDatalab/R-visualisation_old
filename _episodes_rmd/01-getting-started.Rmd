@@ -12,6 +12,21 @@ keypoints:
 source: Rmd
 ---
 
+
+struktur
+
+Data, mapping og en enkelt geom.
+
+Hvad gør vi når vi mapper. Det er et læringsmål at man forstår hvad det er.
+
+
+
+
+
+
+
+
+
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("01-")
@@ -33,14 +48,17 @@ weird naming conventions follows from this.
 What we do need to know, is that based on the grammar of graphics, the layered
 structure of a plot using ggplot, is build like this:
 
-ggplot(data = <DATA>) +
-<GEOM_FUNCTION>(mapping = aes(<MAPPINGS>),
-stat = <STAT>, position = <POSITION>) +
-COORDINATE_FUNCTION +
-FACET_FUNCTION +
-SCALE_FUNCTION +
-THEME_FUNCTION.
 
+ggplot(data = <DATA>) + 
+  <GEOM_FUNCTION>(
+     mapping = aes(<MAPPINGS>),
+     stat = <STAT>, 
+     position = <POSITION>
+  ) +
+  <COORDINATE_FUNCTION> +
+  <SCALE_FUNCTION> +
+  <FACET_FUNCTION> +
+  <THEME_FUNCTION>
 
 We are going to cover each element in the following.
 
