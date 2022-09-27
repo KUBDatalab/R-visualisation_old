@@ -18,4 +18,46 @@ source: Rmd
 
 
 
+Hvilke andre typer plots kan vi lave?
+
+## Histogrammer
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat)) +
+  geom_histogram()
+~~~
+{: .language-r}
+
+
+
+~~~
+`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+~~~
+{: .output}
+
+<img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+
+## Søjlediagrammer
+
+## boxplots
+
+## Violinplots
+
+## og mange andre
+
+ggplot2 is born with a multitude of different plots. And ggplot2 can be 
+extended. 
+
+A complete list of plots will be very long, and take up all the time for this
+course.
+
+Take a look at https://r-graph-gallery.com/
+
+or at https://kubdatalab.github.io/R-graphs/ (NB a work in progress), where
+we will collect weird and wonderful plots, when to use them, when not to 
+use them. And how to make them.
+
+
 {% include links.md %}

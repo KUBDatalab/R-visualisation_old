@@ -1,0 +1,36 @@
+---
+title: "Saving and exporting"
+teaching: 10
+exercises: 5
+questions:
+- "FIX ME"
+objectives:
+- "FIX ME"
+keypoints:
+- "FIX ME"
+
+source: Rmd
+---
+
+```{r, include = FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("09-")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## It would be nice to be able to save the plot.
+
+både som sidste plot. brug plotte panelet i rstudio til at justere.
+
+Men også muligt at bestemme størrelse direkte.
+
+Forskellige filformater.
+
+
+saving plottet.
+
+{% include links.md %}
