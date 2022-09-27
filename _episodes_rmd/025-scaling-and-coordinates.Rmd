@@ -1,0 +1,50 @@
+---
+title: "Scaling and coordinates"
+teaching: 10
+exercises: 5
+questions:
+- "FIX ME"
+objectives:
+- "FIX ME"
+keypoints:
+- "FIX ME"
+
+source: Rmd
+---
+
+```{r, include = FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("025-")
+library(tidyverse)
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+The coordinate system can be changed. If we want to flip the coordinates, we
+could interchange the x and y values in the mapping argument.
+Or we could add a coordinate function that changes the coordinate system:
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  coord_flip()
+```
+Other coord_ functions exists, the most commonly used are coord_flip and coord_polar:
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  coord_polar()
+```
+That might not be that useful working with diamonds.
+
+
+
+
+
+
+
+{% include links.md %}
