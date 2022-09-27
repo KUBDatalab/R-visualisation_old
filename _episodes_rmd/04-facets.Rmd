@@ -14,11 +14,31 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("00-")
+knitr_fig_path("04-")
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+### FACET_FUNCTION
+
+There are more variables in this dataset. But it becomes increasingly difficult
+to add information to a two dimensional plot. One way to overcome this might be to 
+make more than one plot, based on values in the dataset.
+
+This is called facetting:
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_wrap(~clarity)
+```
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_grid(clarity ~color)
+```
+
 
 {% include links.md %}

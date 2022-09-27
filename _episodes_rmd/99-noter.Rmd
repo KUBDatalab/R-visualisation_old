@@ -15,30 +15,15 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("02-")
+knitr_fig_path("99-")
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
----
-title: Data visualization with ggplot2
-author: Data Carpentry contributors
-minutes: 60
-editor_options:
-  chunk_output_type: console
----
 
 
-```{r setup, echo=FALSE, message = FALSE, warning = FALSE, purl=FALSE}
-source("setup.R")
-surveys_complete <- read_csv(file = "data_raw/portal_data_joined.csv", col_types = cols()) %>%
-  drop_na(weight, hindfoot_length, sex) %>%
-  group_by(species_id) %>%
-  filter(n() >= 50) %>%
-  ungroup()
-```
 
 ```{r, echo=FALSE, purl=TRUE}
 ### Data Visualization with ggplot2
