@@ -7,9 +7,11 @@ exercises: 5
 questions:
 - "FIX ME"
 objectives:
-- "FIX ME"
+- "Get to know factors"
 keypoints:
-- "FIX ME"
+- "This is not an introduction to R"
+- "Factors are used to represent categorical data in R"
+- "Visualisation is a useful way of representing data"
 
 source: Rmd
 ---
@@ -17,7 +19,7 @@ source: Rmd
 
 
 
-## This is not an introduction to R
+### This is not an introduction to R
 
 This is a course on how to plot data using the ggplot2 library in R.
 
@@ -26,20 +28,20 @@ good experience in this course.
 
 This course assumes a certain level of knowledge about R. We are not going to cover the basics, and you are expected to know how to use the following functionalities in R before starting this course.
 
-Have R and R-studio installed. Alternatively run everything on rstudio.cloud
-Know how to assign values to variables
-know what a function is, and how we pass input and parameters to it
-be familiar with the %>% operator
-know the basic verbs from dplyr of the tidyverse: select filter mutate arrange summarise
-be familiar with dataframes
-know how to install and load packages
-comments 
-doing math on variables 
-Get the concept of vectors 
-subsetting vectors and dataframes 
-logical tests 
-NA 
-read in data from a csv/excel
+* Have R and R-studio installed. Alternatively run everything on rstudio.cloud
+* Know how to assign values to variables
+* know what a function is, and how we pass input and parameters to it
+* be familiar with the %>% operator
+* know the basic verbs from dplyr of the tidyverse: select filter mutate arrange summarise
+* be familiar with dataframes
+* know how to install and load packages
+* comments 
+* doing math on variables 
+* Get the concept of vectors 
+* subsetting vectors and dataframes 
+* logical tests 
+* NA 
+* read in data from a csv/excel
 
 If any of these topics are unfamiliar, we strongly recommend that you either take one of our introductory courses, read up on the curriculum of one of them, or follow one of the many amazing courses you can find online, before taking this course.
 
@@ -49,87 +51,7 @@ Tag et af vores introducerende kurser LINKS før du melder dig til her.
 
 
 
-## Getting ready to plot!
-Before we do anything else, we need to make sure that we have installed the necessary libraries.
 
-
-~~~
-install.packages("tidyverse")
-~~~
-{: .language-r}
-
-After installing the libraries, we load the libraries, so we can use them:
-
-
-~~~
-library(tidyverse)
-~~~
-{: .language-r}
-
-
-
-~~~
-── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──
-~~~
-{: .output}
-
-
-
-~~~
-✔ ggplot2 3.3.6     ✔ purrr   0.3.4
-✔ tibble  3.1.7     ✔ dplyr   1.0.9
-✔ tidyr   1.2.0     ✔ stringr 1.4.0
-✔ readr   2.1.2     ✔ forcats 0.5.1
-~~~
-{: .output}
-
-
-
-~~~
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-~~~
-{: .output}
-
-## Hvilke data arbejder vi med
-
-Vi arbejder med en klassiker. Diamanter.
-
-
-~~~
-head(diamonds)
-~~~
-{: .language-r}
-
-
-
-~~~
-# A tibble: 6 × 10
-  carat cut       color clarity depth table price     x     y     z
-  <dbl> <ord>     <ord> <ord>   <dbl> <dbl> <int> <dbl> <dbl> <dbl>
-1  0.23 Ideal     E     SI2      61.5    55   326  3.95  3.98  2.43
-2  0.21 Premium   E     SI1      59.8    61   326  3.89  3.84  2.31
-3  0.23 Good      E     VS1      56.9    65   327  4.05  4.07  2.31
-4  0.29 Premium   I     VS2      62.4    58   334  4.2   4.23  2.63
-5  0.31 Good      J     SI2      63.3    58   335  4.34  4.35  2.75
-6  0.24 Very Good J     VVS2     62.8    57   336  3.94  3.96  2.48
-~~~
-{: .output}
-
-Datasættet diamonds er indbygget i ggplot2. Det indeholder priser på 53,940 diamanter,
-og parametre på dem:
-
-- carat: diamantens vægt i karat (0.200 gram)
-- cut Kvaliteten af hvordan diamanten er slebet (Fair, Good, Very Good, Premium, Ideal)
-- color. farven - fra D (der er bedst), til J (der er dårligst)
-- clarity et mål for hvor klar diamanten er. Kategorisk variabel, "I1" (dårligst), "SI2", "SI1", "VS2", "VS1", "VVS2", "VVS1", "IF" (bedst)
-- depth total depth percentage (øh? z divideret med middelværdien af x og y)
-- table bredden af toppen - relativt til det bredeste punkt
-- price. I USD
-- x længde i mm
-- y bredde i mm
-- z dybde i mm
 
 ## One introductory element in R
 
@@ -168,10 +90,9 @@ head(diamonds$cut)
 
 
 ~~~
-[1] Ideal     Premium   Good      Premium   Good      Very Good
-Levels: Fair < Good < Very Good < Premium < Ideal
+Error in head(diamonds$cut): object 'diamonds' not found
 ~~~
-{: .output}
+{: .error}
 We see the values. And we also see that these values have *levels*, the six
 categorical values that the cut of a diamond can have.
 
@@ -187,9 +108,9 @@ as.numeric(head(diamonds$cut))
 
 
 ~~~
-[1] 5 4 2 4 2 3
+Error in head(diamonds$cut): object 'diamonds' not found
 ~~~
-{: .output}
+{: .error}
 R handles categorical values, factors, by assigning an integer to each value.
 5 to "ideal", 4 to "Premium", 2 to "Good" etc. These are the values stored.
 
@@ -204,9 +125,9 @@ levels(diamonds$cut)
 
 
 ~~~
-[1] "Fair"      "Good"      "Very Good" "Premium"   "Ideal"    
+Error in levels(diamonds$cut): object 'diamonds' not found
 ~~~
-{: .output}
+{: .error}
 
 And they appear in a specific order. 
 
@@ -223,10 +144,9 @@ head(diamonds$cut)
 
 
 ~~~
-[1] Ideal     Premium   Good      Premium   Good      Very Good
-Levels: Fair < Good < Very Good < Premium < Ideal
+Error in head(diamonds$cut): object 'diamonds' not found
 ~~~
-{: .output}
+{: .error}
 Where the "<" indicates that "Good" is better than "Fair", but worse than 
 "Very good".
 
@@ -243,10 +163,9 @@ fct_relevel(diamonds$cut, "Good", "Ideal") %>%
 
 
 ~~~
-[1] Ideal     Premium   Good      Premium   Good      Very Good
-Levels: Good < Ideal < Fair < Very Good < Premium
+Error in fct_relevel(diamonds$cut, "Good", "Ideal") %>% head(): could not find function "%>%"
 ~~~
-{: .output}
+{: .error}
 Now the order is changed, because we have specified that the first two levels 
 should be "Good", followed by "Ideal".
 

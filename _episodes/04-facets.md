@@ -18,4 +18,42 @@ source: Rmd
 
 
 
+### FACET_FUNCTION
+
+There are more variables in this dataset. But it becomes increasingly difficult
+to add information to a two dimensional plot. One way to overcome this might be to 
+make more than one plot, based on values in the dataset.
+
+This is called facetting:
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_wrap(~clarity)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  facet_grid(clarity ~color)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
+~~~
+{: .error}
+
+
 {% include links.md %}
