@@ -14,11 +14,43 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("00-")
+knitr_fig_path("02-")
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
+
+Hvilke andre typer plots kan vi lave?
+
+## Histogrammer
+
+```{r}
+diamonds %>% 
+  ggplot(aes(carat)) +
+  geom_histogram()
+```
+
+## Søjlediagrammer
+
+## boxplots
+
+## Violinplots
+
+## og mange andre
+
+ggplot2 is born with a multitude of different plots. And ggplot2 can be 
+extended. 
+
+A complete list of plots will be very long, and take up all the time for this
+course.
+
+Take a look at https://r-graph-gallery.com/
+
+or at https://kubdatalab.github.io/R-graphs/ (NB a work in progress), where
+we will collect weird and wonderful plots, when to use them, when not to 
+use them. And how to make them.
+
 
 {% include links.md %}
