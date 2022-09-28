@@ -21,6 +21,7 @@ knitr_fig_path("00-")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 ### This is not an introduction to R
 
@@ -52,6 +53,25 @@ If any of these topics are unfamiliar, we strongly recommend that you either tak
 Tag et af vores introducerende kurser LINKS før du melder dig til her.
 
 
+
+## Why even visualise data?
+
+Data can be complex. Data can be confusing. And a good visualisation of data
+can reduce some of that complexity and confusion.
+
+A good visualisation can reveal patterns in our data.
+
+A really good visualisation can even provide insight that is difficult, or
+impossible to find without.
+
+A good example is 
+
+kolerakortet fra London.
+
+This map revealed that cases of cholera where clustered around a single water 
+pump. The pump was closed, and the outbreak of cholera died out. 
+
+We are not going to discover patterns of equal importance in this course.
 
 
 
