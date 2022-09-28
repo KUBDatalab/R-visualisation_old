@@ -24,6 +24,9 @@ library(tidyverse)
 
 Hvilke andre typer plots kan vi lave?
 
+Et af dem bør have "se selv på aesthetics i hjælp, og tilpas". det kunne nok godt 
+være violinplot efter vi har kigget på boxplots
+
 ## Histogrammer
 
 ```{r}
@@ -34,9 +37,26 @@ diamonds %>%
 
 ## Søjlediagrammer
 
+```{r eval=F}
+ggplot() +
+  geom_col()
+```
+
+
 ## boxplots
+```{r eval = F}
+diamonds %>% ggplot(aes(carat, y = cut)) +
+  geom_boxplot()
+```
+
 
 ## Violinplots
+
+```{r eval = F}
+diamonds %>% ggplot(aes(carat, y = cut)) +
+  geom_violin()
+```
+
 
 ## og mange andre
 

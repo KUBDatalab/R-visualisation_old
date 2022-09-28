@@ -14,6 +14,7 @@ keypoints:
 source: Rmd
 ---
 
+saving private ggplot
 
 
 
@@ -26,6 +27,42 @@ både som sidste plot. brug plotte panelet i rstudio til at justere.
 Men også muligt at bestemme størrelse direkte.
 
 Forskellige filformater.
+hvad er godt til hvad.
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point()
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-09-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+
+~~~
+ggsave()
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in plot_dev(device, filename, dpi = dpi): argument "filename" is missing, with no default
+~~~
+{: .error}
+
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.1) +
+  theme_dark() +
+  theme(panel.background = element_rect(fill = "black"))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-09-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+
 
 
 saving plottet.

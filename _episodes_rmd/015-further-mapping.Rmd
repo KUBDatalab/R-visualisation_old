@@ -1,5 +1,5 @@
 ---
-title: "Our first plot"
+title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
@@ -25,6 +25,8 @@ knitr::opts_chunk$set(echo = TRUE)
 We saw how to map data to a position in a scatterplot. But we are able to map 
 the data to other elements of a plot, eg the color of the points.
 
+TRÆLS: color = color. Sådan er det bare.
+
 
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
@@ -47,6 +49,7 @@ What else can we map data to?
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color, size = table)) +
   geom_point()
 ```
+Not at good plot...
 
 What can be mapped to the plot depends on the geom we are using. 
 
@@ -71,13 +74,21 @@ identical.
 
 Note:
 
-# This is the correct syntax for adding layers
-surveys_plot +
-  geom_point()
+### This is the correct syntax for adding layers
 
-# This will not add the new layer and will return an error message
-surveys_plot
+```{r, eval = F}
+ggplot() +
+  geom_point()
+```
+
+
+
+### This will not add the new layer and will return an error message
+```{r, eval = F}
+ggplot()
   + geom_point()
+```
+
 
 
 

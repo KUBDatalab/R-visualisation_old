@@ -35,6 +35,25 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 <img src="../fig/rmd-025-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
 Other coord_ functions exists, the most commonly used are coord_flip and coord_polar:
 
+mhp lagkage
+
+DET HER SKAL DER NOK KIGGES LIDT PÅ... SÅDAN DIDAKTISK NOK TIL AT JEG SELV 
+FORSTÅR HVAD DER FOREGÅR...
+
+~~~
+diamonds %>% 
+  mutate(color = as.character(color)) %>% 
+  filter(color == "G") %>% 
+  ggplot(aes(x= color, fill = cut)) +
+  geom_bar(position = "stack") +
+    coord_polar("y", start=0) 
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-025-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+
+
+
 ~~~
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point() +
@@ -42,9 +61,25 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-025-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-025-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
 That might not be that useful working with diamonds.
 
+
+## Log -scale
+
+TÆNK LIDT OVER DEN... forklaring. Hvorfor logaritmerer vi. 
+Måske bedre eksempel end herunder.
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  scale_y_log10()
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-025-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
 
 
 

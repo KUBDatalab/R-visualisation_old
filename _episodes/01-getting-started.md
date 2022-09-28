@@ -57,12 +57,7 @@ ggplot(data = diamonds)
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in ggplot(data = diamonds): could not find function "ggplot"
-~~~
-{: .error}
+<img src="../fig/rmd-01-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
 This in itself produces an extremely boring plot. But it is a plot!. What is 
 missing is information on what exactly it is in the dataset we are trying to plot.
 How should our data be *mapped* to the area of our plot? Or, what should we 
@@ -76,18 +71,15 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price))
 ~~~
 {: .language-r}
 
+<img src="../fig/rmd-01-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
 
-
-~~~
-Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price)): could not find function "ggplot"
-~~~
-{: .error}
 
 This specifies that we want the carat-value on the x-axis, and the value, price, 
 of the diamond on the y-axis. 
 
 We are not actually seeing any data, because we have not specified the way the
-individual datapoints should be plotted. 
+individual datapoints should be plotted. But we do se that the axes now have values.
+The data has influenced the plot!
 
 We are going to use points, in order to make a classic scatter plot. We do that
 by adding a geom_ function to our plot:
@@ -98,12 +90,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price)): could not find function "ggplot"
-~~~
-{: .error}
+<img src="../fig/rmd-01-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
 Note that in the template shown above, mapping was placed in the <GEOM_FUNCTION>
 rather than in the ggplot function. If we place the mapping in the ggplot function
 that mapping will be inherited by the functions we add later, unless we specify
@@ -127,12 +114,16 @@ ggplot(data = diamonds) +
 
 will yield the same result.
 
+Note: 
+
+geom_ is what the geometries are called. There are several to choose from. We are
+going to look at some of them later.
 
 An exercise:
 Try to plot "carat" (the weight of the diamond) against "x" (the length of the diamond) 
 
 note that some outliers, probably erroneous data, are discovered. A length of 0
-is highly suspicious.
+is highly suspicious. Plots are also useful to reveal this sort of things!
 solution
 
 ~~~
@@ -142,12 +133,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in diamonds %>% ggplot(aes(carat, x)): could not find function "%>%"
-~~~
-{: .error}
+<img src="../fig/rmd-01-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
 Congratulations! You have made your first plot in R! (or maybe not)
 

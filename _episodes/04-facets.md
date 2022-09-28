@@ -34,26 +34,16 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
-~~~
-{: .error}
+<img src="../fig/rmd-04-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
 
 ~~~
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point() +
-  facet_grid(clarity ~color)
+  facet_grid(clarity ~ color)
 ~~~
 {: .language-r}
 
-
-
-~~~
-Error in ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)): could not find function "ggplot"
-~~~
-{: .error}
+<img src="../fig/rmd-04-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
 
 
 {% include links.md %}

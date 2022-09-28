@@ -20,6 +20,9 @@ source: Rmd
 
 Hvilke andre typer plots kan vi lave?
 
+Et af dem bør have "se selv på aesthetics i hjælp, og tilpas". det kunne nok godt 
+være violinplot efter vi har kigget på boxplots
+
 ## Histogrammer
 
 
@@ -41,9 +44,32 @@ diamonds %>%
 
 ## Søjlediagrammer
 
+
+~~~
+ggplot() +
+  geom_col()
+~~~
+{: .language-r}
+
+
 ## boxplots
 
+~~~
+diamonds %>% ggplot(aes(carat, y = cut)) +
+  geom_boxplot()
+~~~
+{: .language-r}
+
+
 ## Violinplots
+
+
+~~~
+diamonds %>% ggplot(aes(carat, y = cut)) +
+  geom_violin()
+~~~
+{: .language-r}
+
 
 ## og mange andre
 

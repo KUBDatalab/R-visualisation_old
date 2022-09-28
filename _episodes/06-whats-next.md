@@ -26,6 +26,7 @@ play around with 30 days of plots eller hvad vi nu har
 
 Udvidelser etc til ggplot
 
+https://clauswilke.com/dataviz/directory-of-visualizations.html#distributions
 
 
 {% include links.md %}
