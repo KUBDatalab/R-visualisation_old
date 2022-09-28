@@ -14,6 +14,8 @@ keypoints:
 source: Rmd
 ---
 
+MÅSKE DATASÆTTET BØR GENNEMGÅS HER SNARERE END I SETUP!
+
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("00-")
