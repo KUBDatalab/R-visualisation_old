@@ -14,11 +14,13 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("00-")
+knitr_fig_path("03-")
 ```
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+FJERN DENNE!
 
 {% include links.md %}
