@@ -1,0 +1,36 @@
+---
+title: "Different types of plots"
+teaching: 10
+exercises: 5
+questions:
+- "FIX ME"
+objectives:
+- "FIX ME"
+keypoints:
+- "FIX ME"
+
+source: Rmd
+---
+
+```{r, include = FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("02-")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+Vi kunne lave boxplots
+
+## boxplots
+```{r eval = F}
+diamonds %>% ggplot(aes(carat, y = cut)) +
+  geom_boxplot()
+```
+
+HVIS VI VIL ÆNDRE RÆKKEFØLGEN - HER PLACERES FAKTORER!
+
+
+{% include links.md %}
