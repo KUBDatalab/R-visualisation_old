@@ -25,6 +25,8 @@ library(tidyverse)
 ```
 ### This is not an introduction to R
 
+DET HER SKAL NOK IKKE VÆRE HER
+
 This is a course on how to plot data using the ggplot2 library in R.
 
 If you have no previous experience with R, you will probably not have a 
@@ -49,8 +51,11 @@ This course assumes a certain level of knowledge about R. We are not going to co
 
 If any of these topics are unfamiliar, we strongly recommend that you either take one of our introductory courses, read up on the curriculum of one of them, or follow one of the many amazing courses you can find online, before taking this course.
 
+Take one of our introductory courses that can be found
+[https://kubkalender.kb.dk/calendar/datalab](here) or take a look at the 
+accompanying website for one of them. It can 
+be [https://kubdatalab.github.io/beginning-R/](found here).
 
-Tag et af vores introducerende kurser LINKS før du melder dig til her.
 
 
 
