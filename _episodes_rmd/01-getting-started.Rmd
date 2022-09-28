@@ -19,6 +19,7 @@ knitr_fig_path("01-")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ## The grammar of graphics
