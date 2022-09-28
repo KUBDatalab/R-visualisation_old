@@ -50,6 +50,25 @@ Tag et af vores introducerende kurser LINKS før du melder dig til her.
 
 
 
+## Why even visualise data?
+
+Data can be complex. Data can be confusing. And a good visualisation of data
+can reduce some of that complexity and confusion.
+
+A good visualisation can reveal patterns in our data.
+
+A really good visualisation can even provide insight that is difficult, or
+impossible to find without.
+
+A good example is 
+
+kolerakortet fra London.
+
+This map revealed that cases of cholera where clustered around a single water 
+pump. The pump was closed, and the outbreak of cholera died out. 
+
+We are not going to discover patterns of equal importance in this course.
+
 
 
 
@@ -90,9 +109,10 @@ head(diamonds$cut)
 
 
 ~~~
-Error in head(diamonds$cut): object 'diamonds' not found
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Fair < Good < Very Good < Premium < Ideal
 ~~~
-{: .error}
+{: .output}
 We see the values. And we also see that these values have *levels*, the six
 categorical values that the cut of a diamond can have.
 
@@ -108,9 +128,9 @@ as.numeric(head(diamonds$cut))
 
 
 ~~~
-Error in head(diamonds$cut): object 'diamonds' not found
+[1] 5 4 2 4 2 3
 ~~~
-{: .error}
+{: .output}
 R handles categorical values, factors, by assigning an integer to each value.
 5 to "ideal", 4 to "Premium", 2 to "Good" etc. These are the values stored.
 
@@ -125,9 +145,9 @@ levels(diamonds$cut)
 
 
 ~~~
-Error in levels(diamonds$cut): object 'diamonds' not found
+[1] "Fair"      "Good"      "Very Good" "Premium"   "Ideal"    
 ~~~
-{: .error}
+{: .output}
 
 And they appear in a specific order. 
 
@@ -144,9 +164,10 @@ head(diamonds$cut)
 
 
 ~~~
-Error in head(diamonds$cut): object 'diamonds' not found
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Fair < Good < Very Good < Premium < Ideal
 ~~~
-{: .error}
+{: .output}
 Where the "<" indicates that "Good" is better than "Fair", but worse than 
 "Very good".
 
@@ -163,9 +184,10 @@ fct_relevel(diamonds$cut, "Good", "Ideal") %>%
 
 
 ~~~
-Error in fct_relevel(diamonds$cut, "Good", "Ideal") %>% head(): could not find function "%>%"
+[1] Ideal     Premium   Good      Premium   Good      Very Good
+Levels: Good < Ideal < Fair < Very Good < Premium
 ~~~
-{: .error}
+{: .output}
 Now the order is changed, because we have specified that the first two levels 
 should be "Good", followed by "Ideal".
 
