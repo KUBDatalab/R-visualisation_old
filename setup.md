@@ -2,7 +2,7 @@
 title: Setup FIXME
 ---
 
-## Setting up R and RStudio
+## Setting up R and RStudio 
 
 
 ## Getting ready to plot!

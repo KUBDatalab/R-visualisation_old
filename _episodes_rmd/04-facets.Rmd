@@ -19,6 +19,7 @@ knitr_fig_path("04-")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ### FACET_FUNCTION
@@ -37,7 +38,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point() +
-  facet_grid(clarity ~color)
+  facet_grid(clarity ~ color)
 ```
 
 

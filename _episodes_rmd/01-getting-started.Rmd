@@ -19,6 +19,7 @@ knitr_fig_path("01-")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 ## The grammar of graphics
@@ -66,11 +67,13 @@ ggplot function:
 ggplot(data = diamonds, mapping = aes(x = carat, y = price))
 ```
 
+
 This specifies that we want the carat-value on the x-axis, and the value, price, 
 of the diamond on the y-axis. 
 
 We are not actually seeing any data, because we have not specified the way the
-individual datapoints should be plotted. 
+individual datapoints should be plotted. But we do se that the axes now have values.
+The data has influenced the plot!
 
 We are going to use points, in order to make a classic scatter plot. We do that
 by adding a geom_ function to our plot:
@@ -97,12 +100,16 @@ ggplot(data = diamonds) +
 
 will yield the same result.
 
+Note: 
+
+geom_ is what the geometries are called. There are several to choose from. We are
+going to look at some of them later.
 
 An exercise:
 Try to plot "carat" (the weight of the diamond) against "x" (the length of the diamond) 
 
 note that some outliers, probably erroneous data, are discovered. A length of 0
-is highly suspicious.
+is highly suspicious. Plots are also useful to reveal this sort of things!
 solution
 ```{r}
 diamonds %>% 

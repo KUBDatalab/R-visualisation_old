@@ -14,7 +14,7 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("00-")
+knitr_fig_path("06-")
 ```
 
 ```{r setup, include=FALSE}
@@ -29,6 +29,7 @@ play around with 30 days of plots eller hvad vi nu har
 
 Udvidelser etc til ggplot
 
+https://clauswilke.com/dataviz/directory-of-visualizations.html#distributions
 
 
 {% include links.md %}

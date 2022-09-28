@@ -12,6 +12,7 @@ keypoints:
 source: Rmd
 ---
 
+saving private ggplot
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
 knitr_fig_path("09-")
@@ -19,6 +20,7 @@ knitr_fig_path("09-")
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 
@@ -29,6 +31,23 @@ både som sidste plot. brug plotte panelet i rstudio til at justere.
 Men også muligt at bestemme størrelse direkte.
 
 Forskellige filformater.
+hvad er godt til hvad.
+
+```{r}
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point()
+ggsave()
+```
+
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point(alpha = 0.1) +
+  theme_dark() +
+  theme(panel.background = element_rect(fill = "black"))
+```
+
 
 
 saving plottet.

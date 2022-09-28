@@ -34,6 +34,24 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   coord_flip()
 ```
 Other coord_ functions exists, the most commonly used are coord_flip and coord_polar:
+
+mhp lagkage
+
+DET HER SKAL DER NOK KIGGES LIDT PÅ... SÅDAN DIDAKTISK NOK TIL AT JEG SELV 
+FORSTÅR HVAD DER FOREGÅR...
+```{r}
+diamonds %>% 
+  mutate(color = as.character(color)) %>% 
+  filter(color == "G") %>% 
+  ggplot(aes(x= color, fill = cut)) +
+  geom_bar(position = "stack") +
+    coord_polar("y", start=0) 
+
+  
+
+```
+
+
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point() +
@@ -41,6 +59,18 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ```
 That might not be that useful working with diamonds.
 
+
+## Log -scale
+
+TÆNK LIDT OVER DEN... forklaring. Hvorfor logaritmerer vi. 
+Måske bedre eksempel end herunder.
+
+```{r}
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  scale_y_log10()
+```
 
 
 
