@@ -14,7 +14,7 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("015-")
+knitr_fig_path("02-")
 library(tidyverse)
 ```
 
@@ -72,22 +72,6 @@ handling overplotting, the phenomenon that multiple data points might be
 identical. 
 
 
-Note:
-
-### This is the correct syntax for adding layers
-
-```{r, eval = F}
-ggplot() +
-  geom_point()
-```
-
-
-
-### This will not add the new layer and will return an error message
-```{r, eval = F}
-ggplot()
-  + geom_point()
-```
 
 
 
