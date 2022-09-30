@@ -37,31 +37,29 @@ this makes sense. Fair is the lowest quality of the cut, ideal the best.
 
 But what is determining the order in this plot?
 
-## One introductory element in R
+If no other information is provided to ggplot, the order will default to a "natural" 
+order. With textual information on the y-axis as in this example, that would be
+alphabetical order.
 
-Factors
+Since the order in this plot is not alphabetical, something else is happening.
 
-One concept that we do not cover in our introductory courses is *factors*.
+And that is factors!
+
+## Factors
 
 Factors are the R way of handling categorical variables. Categorical variables,
-also known as qualitative variables, are variabels that can take on one and only
+also known as qualitative variables, are variables that can take on one and only
 one, of a limited, usually fixed, number of possible values. 
 
 Classical examples are the roll of a six-sided die, that can only have one of the
 possible outcomes of 1, 2, 3, 4, 5 or 6. The role in reproduction for a mammal
-can be only female or male. Either your cell phone has power. Or it dont.
-
-These are examples of intrinsic categorical values. 
-
-We might also discretize continous variables, like how much battery is left on a 
-cell phone. The actual value might be 55%. But we are recording only levels of 
-0%, 25%, 50%, 75% and 100%. And in that case we will probably record the categorical
-value as 50%.
+can be only female or male. A cell phone is either on or off.
 
 With the data we are working with here, the cut of a diamond can be either
 Fair, Good, Very Good, Premium and Ideal. 
 
-These are categorical values. The cut of a diamond is either Fair or not-Fair.
+These are categorical values. The cut of a diamond falls in to one and only one
+of these categories.
 
 Let us take a look at the actual values of the cut variable (of the first 6 
 observations) in our dataset:
@@ -86,20 +84,37 @@ Associated with these values are *levels*
 levels(diamonds$cut)
 ```
 
-And they appear in a specific order. 
+And they appear in a specific order. It is this order, that determines the order
+of them in the plot.
 
-The cut of diamonds are actually not only categorical, but also *ordinal*, meaning
-that they are not just in a specific order, but that one level is "better" than
-another. We see an indication here:
+If we change that order, the order of the categories in the plot also changes.
 
-```{r}
-head(diamonds$cut)
-```
-Where the "<" indicates that "Good" is better than "Fair", but worse than 
-"Very good".
+
+> ## ordinals
+>
+> The cut of these diamonds is not only categorical, but also *ordinal*.
+> That is, they are not just in a specific order, but one level is "better" than
+> another.
+> We see that in the output of head(diamonds$cut):
+> [1] Ideal     Premium   Good      Premium   Good      Very Good
+> Levels: Fair < Good < Very Good < Premium < Ideal
+> 
+> < indicates that "good" is better than "fair", but worse than "very good".
+{: .callout}
+
+The *forcats* library, part of the Tidyverse, contains a collection of functions 
+for manipulating factors.
 
 We can change the order of the levels of a factor using functions from the 
-*forcats* library:
+*forcats* library.
+
+One way of reordering factors is the fct_relevel() function. We need to
+provide the factor we are reordering, and can the specify the order of the
+levels. 
+
+Here, we are specifying "Good" and "Ideal". Good will be relevelled to be the 
+first level, "Ideal" the second, followed by the rest of the original factor
+in their original order:
 
 ```{r}
 fct_relevel(diamonds$cut, "Good", "Ideal") %>% 
@@ -114,6 +129,13 @@ Regarding plotting in R, the important thing to know is that the order of things
 in our plots are typically controlled by the order of factors, and that we can
 change that order to suit our needs.
 
+Let us try:
+```{r}
+diamonds %>% 
+  mutate(cut = fct_relevel(cut, "Good", "Ideal")) %>% 
+  ggplot(aes(carat, y = cut)) +
+    geom_boxplot()
+```
 
 
 
