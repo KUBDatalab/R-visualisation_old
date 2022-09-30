@@ -1,5 +1,5 @@
 ---
-title: "Different types of plots"
+title: "Ordering stuff"
 teaching: 10
 exercises: 5
 questions:
@@ -14,7 +14,7 @@ source: Rmd
 
 ```{r, include = FALSE}
 source("../bin/chunk-options.R")
-knitr_fig_path("02-")
+knitr_fig_path("04-")
 ```
 
 ```{r setup, include=FALSE}
@@ -22,14 +22,20 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
 
-Vi kunne lave boxplots
+# The order of stuff
 
-## boxplots
-```{r eval = F}
+Previously we made a boxbplot:
+
+
+```{r order_boxplot}
 diamonds %>% ggplot(aes(carat, y = cut)) +
   geom_boxplot()
 ```
 
+Knowing what we know about the order of terms for the quality of the diamonds,
+this makes sense. Fair is the lowest quality of the cut, ideal the best.
+
+But what is determining the order in this plot?
 
 ## One introductory element in R
 
