@@ -242,7 +242,7 @@ ggplot(data = surveys_complete, mapping = aes(x = weight, y = hindfoot_length)) 
 > `species_id` with the plot types showing in different colors.
 > Is this a good way to show this type of data?
 >
-> ```{r scatter-challenge-answer, answer=TRUE, purl=FALSE}
+> ```{r scatter-challenge-answer, answer=TRUE, purl=FALSE, eval = F}
 > ggplot(data = surveys_complete,
 >        mapping = aes(x = species_id, y = weight)) +
 >    geom_point(aes(color = plot_type))
@@ -481,7 +481,7 @@ provides a wide variety of options.
 > Use what you just learned to create a plot that depicts how the average weight
 > of each species changes through the years.
 >
-> ```{r average-weight-time-series, answer=TRUE, purl=FALSE}
+> ```{r average-weight-time-series, answer=TRUE, purl=FALSE, eval = F}
 > yearly_weight <- surveys_complete %>%
 >                 group_by(year, species_id) %>%
 >                  summarize(avg_weight = mean(weight))

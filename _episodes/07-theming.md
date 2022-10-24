@@ -96,7 +96,7 @@ ikke givet at det er den jeg er har lyst til at vise.
 
 ~~~
 Warning: `data_frame()` was deprecated in tibble 1.1.0.
-Please use `tibble()` instead.
+ℹ Please use `tibble()` instead.
 ~~~
 {: .warning}
 

@@ -287,13 +287,6 @@ Error in ggplot(data = surveys_complete, mapping = aes(x = weight, y = hindfoot_
 >    geom_point(aes(color = plot_type))
 > ~~~
 > {: .language-r}
-> 
-> 
-> 
-> ~~~
-> Error in ggplot(data = surveys_complete, mapping = aes(x = species_id, : object 'surveys_complete' not found
-> ~~~
-> {: .error}
 
 
 
@@ -661,32 +654,12 @@ provides a wide variety of options.
 > yearly_weight <- surveys_complete %>%
 >                 group_by(year, species_id) %>%
 >                  summarize(avg_weight = mean(weight))
-> ~~~
-> {: .language-r}
-> 
-> 
-> 
-> ~~~
-> Error in group_by(., year, species_id): object 'surveys_complete' not found
-> ~~~
-> {: .error}
-> 
-> 
-> 
-> ~~~
 > ggplot(data = yearly_weight, mapping = aes(x=year, y=avg_weight)) +
 >    geom_line() +
 >    facet_wrap(vars(species_id)) +
 >    theme_bw()
 > ~~~
 > {: .language-r}
-> 
-> 
-> 
-> ~~~
-> Error in ggplot(data = yearly_weight, mapping = aes(x = year, y = avg_weight)): object 'yearly_weight' not found
-> ~~~
-> {: .error}
 
 
 
