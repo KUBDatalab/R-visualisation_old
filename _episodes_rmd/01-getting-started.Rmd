@@ -3,11 +3,12 @@ title: "Getting started"
 teaching: 10
 exercises: 5
 questions:
-- "What else can we map data to?"
+- "How do we build a ggplot?"
 objectives:
-- "FIX ME"
+- "Get to understand the layers in ggplot2"
+- "Make our first plot"
 keypoints:
-- "FIX ME"
+- "Plots in ggplot2 are build by adding layers"
 
 source: Rmd
 ---
