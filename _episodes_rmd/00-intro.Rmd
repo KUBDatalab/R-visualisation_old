@@ -3,13 +3,13 @@ title: "Before we Start"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "Why are we even visualizing?"
 objectives:
-- "Get to know factors"
+- "Get to know the data we are going to work with"
 keypoints:
 - "This is not an introduction to R"
-- "Factors are used to represent categorical data in R"
 - "Visualisation is a useful way of representing data"
+- "We are going to study diamonds!"
 
 source: Rmd
 ---
@@ -38,6 +38,7 @@ impossible to find without.
 A good example is this map, where the English physician John Snow plotted the 
 deaths from Cholera in Soho, London from 19th august to 30th September
 1854. 
+
 
 ![John Snow cholera map - Wellcome Trust, (CC BY 4.0) ](../fig/snow_cholera_map.jpg)
 
