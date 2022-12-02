@@ -3,7 +3,7 @@ title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "Can we map data to other parts of the plot"
 objectives:
 - "FIX ME"
 keypoints:
@@ -54,11 +54,24 @@ Not at good plot...
 What can be mapped to the plot depends on the geom we are using. 
 
 Calling the help function, ?geom_point, on a geom will provide insight on that
-question. Doing it on the geom_poin() function, reveals that x and y are mandatory
+question. Doing it on the geom_point() function, reveals that x and y are mandatory
 because they are in bold.
 
+The list of stuff we can map data to in geom_point:
 
-## not actually mapping
+* *x*
+* *y*
+* alpha
+* colour
+* fill
+* group
+* shape
+* size
+* stroke
+
+Different geom_ functions have different mandatory/required aesthetics.
+
+## Not really mapping. Sorta.
 Rather than mapping values from the data to an aesthetic, we can provide
 values directly. One very useful aesthetic to play with, at least when
 we have as many datapoints as we have here, is `alpha`:
@@ -72,6 +85,24 @@ handling overplotting, the phenomenon that multiple data points might be
 identical. 
 
 
+> ## geoms
+>
+> geom_point() is the function we use to make scatter plots; because points is
+> a geometric object. 
+> Other geometric objects can be plotted:
+> geom_histogram() will plot histograms
+> geom_line() will plot lines
+> 
+> `r ggpubr::show_point_shapes()`
+>
+> All geometries in ggplot2 are named using the pattern geom_
+> 
+{: .callout}
+
+
+```{r}
+
+```
 
 
 
