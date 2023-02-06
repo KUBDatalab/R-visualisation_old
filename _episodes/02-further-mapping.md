@@ -5,7 +5,7 @@ title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "Can we map data to other parts of the plot"
 objectives:
 - "FIX ME"
 keypoints:
@@ -31,7 +31,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-02-chunk1-1.png" alt="plot of chunk chunk1" width="612" style="display: block; margin: auto;" />
 Not surprisingly, the "best" color, D have higher prices than the "worst"
 color, "J".
 
@@ -43,7 +43,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price), color = color) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-02-chunk2-1.png" alt="plot of chunk chunk2" width="612" style="display: block; margin: auto;" />
 What happened to the color? The color argument is outside the aes() function.
 That means that we are not mapping data to the color!
 
@@ -56,17 +56,30 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color, size 
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
 Not at good plot...
 
 What can be mapped to the plot depends on the geom we are using. 
 
 Calling the help function, ?geom_point, on a geom will provide insight on that
-question. Doing it on the geom_poin() function, reveals that x and y are mandatory
+question. Doing it on the geom_point() function, reveals that x and y are mandatory
 because they are in bold.
 
+The list of stuff we can map data to in geom_point:
 
-## not actually mapping
+* *x*
+* *y*
+* alpha
+* colour
+* fill
+* group
+* shape
+* size
+* stroke
+
+Different geom_ functions have different mandatory/required aesthetics.
+
+## Not really mapping. Sorta.
 Rather than mapping values from the data to an aesthetic, we can provide
 values directly. One very useful aesthetic to play with, at least when
 we have as many datapoints as we have here, is `alpha`:
@@ -78,13 +91,27 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-02-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
 `alpha´ controls the transparency of the points plotted, and is a handy way of
 handling overplotting, the phenomenon that multiple data points might be 
 identical. 
 
 
+> ## geoms
+>
+> geom_point() is the function we use to make scatter plots; because points is
+> a geometric object. 
+> Other geometric objects can be plotted:
+> geom_histogram() will plot histograms
+> geom_line() will plot lines
+> 
+>
+> All geometries in ggplot2 are named using the pattern geom_
+> 
+{: .callout}
 
+
+r ggpubr::show_point_shapes()
 
 
 

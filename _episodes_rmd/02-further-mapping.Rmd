@@ -3,7 +3,7 @@ title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "Can we map data to other parts of the plot"
 objectives:
 - "FIX ME"
 keypoints:
@@ -28,7 +28,7 @@ the data to other elements of a plot, eg the color of the points.
 TRÆLS: color = color. Sådan er det bare.
 
 
-```{r}
+```{r chunk1}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point()
 ```
@@ -36,7 +36,7 @@ Not surprisingly, the "best" color, D have higher prices than the "worst"
 color, "J".
 
 A common mistake is to place the color argument a wrong place:
-```{r}
+```{r chunk2}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price), color = color) +
   geom_point()
 ```
@@ -54,11 +54,24 @@ Not at good plot...
 What can be mapped to the plot depends on the geom we are using. 
 
 Calling the help function, ?geom_point, on a geom will provide insight on that
-question. Doing it on the geom_poin() function, reveals that x and y are mandatory
+question. Doing it on the geom_point() function, reveals that x and y are mandatory
 because they are in bold.
 
+The list of stuff we can map data to in geom_point:
 
-## not actually mapping
+* *x*
+* *y*
+* alpha
+* colour
+* fill
+* group
+* shape
+* size
+* stroke
+
+Different geom_ functions have different mandatory/required aesthetics.
+
+## Not really mapping. Sorta.
 Rather than mapping values from the data to an aesthetic, we can provide
 values directly. One very useful aesthetic to play with, at least when
 we have as many datapoints as we have here, is `alpha`:
@@ -72,7 +85,21 @@ handling overplotting, the phenomenon that multiple data points might be
 identical. 
 
 
+> ## geoms
+>
+> geom_point() is the function we use to make scatter plots; because points is
+> a geometric object. 
+> Other geometric objects can be plotted:
+> geom_histogram() will plot histograms
+> geom_line() will plot lines
+> 
+>
+> All geometries in ggplot2 are named using the pattern geom_
+> 
+{: .callout}
 
+
+r ggpubr::show_point_shapes()
 
 
 
