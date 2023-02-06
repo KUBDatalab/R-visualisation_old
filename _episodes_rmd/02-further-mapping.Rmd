@@ -28,7 +28,7 @@ the data to other elements of a plot, eg the color of the points.
 TRÆLS: color = color. Sådan er det bare.
 
 
-```{r}
+```{r chunk1}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point()
 ```
@@ -36,7 +36,7 @@ Not surprisingly, the "best" color, D have higher prices than the "worst"
 color, "J".
 
 A common mistake is to place the color argument a wrong place:
-```{r}
+```{r chunk2}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price), color = color) +
   geom_point()
 ```
@@ -93,17 +93,13 @@ identical.
 > geom_histogram() will plot histograms
 > geom_line() will plot lines
 > 
-> `r ggpubr::show_point_shapes()`
 >
 > All geometries in ggplot2 are named using the pattern geom_
 > 
 {: .callout}
 
 
-```{r}
-
-```
-
+r ggpubr::show_point_shapes()
 
 
 
