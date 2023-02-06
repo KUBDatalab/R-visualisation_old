@@ -1,8 +1,6 @@
 ---
 title: Setup R and RStudio
 ---
-
-
 ### This is not an introduction to R
 
 This is a course on how to plot data using the ggplot2 library in R.
@@ -27,6 +25,7 @@ This course assumes a certain level of knowledge about R. We are not going to co
 * NA 
 * read in data from a csv/excel
 
+
 If any of these topics are unfamiliar, we strongly recommend that you either take one of our introductory courses, read up on the curriculum of one of them, or follow one of the many amazing courses you can find online, before taking this course.
 
 Take one of our introductory courses that can be found
@@ -34,10 +33,53 @@ Take one of our introductory courses that can be found
 accompanying website for one of them. It can 
 be [https://kubdatalab.github.io/beginning-R/](found here).
 
+## Setup instructions
+
+If you do not have R and Rstudio installed, follow the instructions under the
+heading `Detailed setup instructions`, and return to the next part of this page
+afterwards.
+
+### I allready have R and RStudio installed!
+
+> ## Where to install?
+>
+> Please make sure you have NOT installed R and RStudio on Onedrive or other clouddrives.
+> R will work but you will not be able to install the extensions to R
+> that you will need in this course!
+>
+{: .caution}
+
+In that case all you need to do is the following:
+
+Make sure you have `tidyverse` installed:
+
+~~~
+install.packages("tidyverse")
+~~~
+{: .language-r}
+
+Check that they are installed and work:
+
+~~~
+library(tidyverse)
+~~~
+{: .language-r}
+
+
+
+
+
 
 
 ## Setting up R and RStudio 
 
+> ## Where to install?
+>
+> Please make sure you do NOT install R and RStudio on Onedrive or other clouddrives.
+> R will work but you will not be able to install the extensions to R
+> that you will need in this course!
+>
+{: .caution}
 
 **R** and **RStudio** are separate downloads and installations. R is the
 underlying statistical computing environment, but using R alone is no
