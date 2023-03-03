@@ -95,5 +95,17 @@ Slightly more detailed information can be found in the help for the dataset:
 ~~~
 {: .language-r}
 
+## What are we not going to spend time on?
+
+There are often several considerations to take into account when we plot.
+
+Two of those, are not covered here:
+
+* Is the plot suitable for the data we are working with?
+* Is the plot looking cool and impressive?
+
+We are not making art. And if a specific type of plot is useful, we do
+not care if it is actually suitable for the diamond data we are working 
+with.
 
 {% include links.md %}

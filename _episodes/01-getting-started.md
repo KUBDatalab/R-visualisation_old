@@ -67,7 +67,7 @@ We are going to cover each element in the following.
 
 ## ggplot in it self
 
-The first thing we need to provide for ggplot is some <DATA>. We are working with
+The first thing we need to provide for ggplot is some `<DATA>`. We are working with
 the diamond dataset:
 
 

@@ -5,11 +5,14 @@ title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
-- "Can we map data to other parts of the plot"
+- "Can we show data using something other than position?"
+- "What is correct, colour or color?"
+- "How do I find out what a `geom_` can do?"
 objectives:
-- "FIX ME"
+- "Learn to plot more than just positions"
 keypoints:
-- "FIX ME"
+- "Data can be plottet as something other than position"
+- "Types of plots are determined by `geom_`functions"
 
 source: Rmd
 ---
@@ -21,40 +24,52 @@ source: Rmd
 We saw how to map data to a position in a scatterplot. But we are able to map 
 the data to other elements of a plot, eg the color of the points.
 
-TRÆLS: color = color. Sådan er det bare.
-
 
 
 ~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point() +
-  scale_color_brewer(palette = "Dark2")
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = color)) +
+  geom_point() 
 ~~~
 {: .language-r}
 
 <img src="../fig/rmd-02-chunk1-1.png" alt="plot of chunk chunk1" width="612" style="display: block; margin: auto;" />
 
-Overvej den sidste linie - farveblindhed - hm. Nødvendigt?
+The argument to which we are mapping the values in the column *color* is also called *colour*, making the code look a bit weird.
+
+Are these colours suitable? Probably not. The authors of this coursematerial are not able to distinguish all of the colours. We will return to how to change colours in plots later in this course.
+
+> ## Spelling
+> 
+> Color, and some other words can be spelled in more than one way.
+> For arguments ggplot understands both the correct english spelling
+> *colour* and the american spelling *color*.
+> 
+> Note that this only applies to the arguments in the functions. If the
+> column in the dataset is called *color* ggplot will not find it if
+> you write *colour* instead.
+>
+{: .callout}
+
 Not surprisingly, the "best" color, D have higher prices than the "worst"
 color, "J".
 
 A common mistake is to place the color argument a wrong place:
 
 ~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price), color = color) +
+ggplot(data = diamonds, mapping = aes(x = carat, y = price), colour = color) +
   geom_point()
 ~~~
 {: .language-r}
 
 <img src="../fig/rmd-02-chunk2-1.png" alt="plot of chunk chunk2" width="612" style="display: block; margin: auto;" />
-What happened to the color? The color argument is outside the aes() function.
-That means that we are not mapping data to the color!
+What happened to the colour? The colour argument is outside the aes() function.
+That means that we are not mapping data to the colour!
 
 What else can we map data to?
 
 
 ~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color, size = table)) +
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = color, size = table)) +
   geom_point()
 ~~~
 {: .language-r}
@@ -65,14 +80,14 @@ plot. Often two plots are better than trying to cram everything into a single pl
 
 What can be mapped to the plot depends on the geom we are using. 
 
-Calling the help function, `?geom_point`, on a geom will provide insight on that
-question. Doing it on the geom_point() function, reveals that x and y are mandatory
+Calling the help function, eg `?geom_point`, on a geom will provide insight on that
+question. Doing it on the `geom_point()` function, reveals that x and y are mandatory
 because they are in bold.
 
 The list of stuff we can map data to in geom_point:
 
-* *x*
-* *y*
+* **x**
+* **y**
 * alpha
 * colour
 * fill
@@ -96,7 +111,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 {: .language-r}
 
 <img src="../fig/rmd-02-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
-`alpha´ controls the transparency of the points plotted, and is a handy way of
+`alpha` controls the transparency of the points plotted, and is a handy way of
 handling overplotting, the phenomenon that multiple data points might be 
 identical. 
 
@@ -116,7 +131,23 @@ identical.
 {: .callout}
 
 
-r ggpubr::show_point_shapes()
+
+
+~~~
+library(ggpubr)
+ggpubr::show_point_shapes()
+~~~
+{: .language-r}
+
+
+
+~~~
+Scale for y is already present.
+Adding another scale for y, which will replace the existing scale.
+~~~
+{: .output}
+
+<img src="../fig/rmd-02-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
 
 
 
