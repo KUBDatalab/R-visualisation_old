@@ -21,8 +21,7 @@ source: Rmd
 
 ## The grammar of graphics
 
-Plotting using ggplot2 is based on "The Grammar of Graphics" 
-https://link.springer.com/book/10.1007/0-387-28695-0, a theoretical treatment of how 
+Plotting using ggplot2 is based on "[The Grammar of Graphics](https://link.springer.com/book/10.1007/0-387-28695-0)", a theoretical treatment of how 
 to talk about and conceptualize plots by Leland Wilkinson.
 
 That theoretical treatise has been implemented in the package ggplot2
@@ -35,7 +34,7 @@ structure of a plot using ggplot, is build like this:
 
 
 ~~~
-ggplot(data = <DATA>) + 
+ggplot(data = <DATA>, mapping = aes(<MAPPINGS>)) + 
   <GEOM_FUNCTION>(
      mapping = aes(<MAPPINGS>),
      stat = <STAT>, 
@@ -48,12 +47,15 @@ ggplot(data = <DATA>) +
 ~~~
 {: .language-r}
 
+The "<" and ">" indicates that we should supply something here. 
+
 We are going to cover each element in the following.
 
 ## ggplot in it self
 
-The first thing we need to provide for ggplot is some data. We are working with
+The first thing we need to provide for ggplot is some <DATA>. We are working with
 the diamond dataset:
+
 
 ~~~
 ggplot(data = diamonds)
@@ -61,13 +63,16 @@ ggplot(data = diamonds)
 {: .language-r}
 
 <img src="../fig/rmd-01-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
-This in itself produces an extremely boring plot. But it is a plot!. What is 
+This in itself produces an extremely boring plot. But it is a plot, and actually
+contains the data already. What is 
 missing is information on what exactly it is in the dataset we are trying to plot.
 How should our data be *mapped* to the area of our plot? Or, what should we 
 have on the X-axis, and what should be on the Y-axis?
 
-We provide that information to ggplot using the *mapping* argument to the 
-ggplot function:
+We provide that information to ggplot using the <MAPPINGS> argument to the 
+ggplot function. Here we want to plot `carat` on the x-axis, and the `price`
+on the y-axis:
+
 
 ~~~
 ggplot(data = diamonds, mapping = aes(x = carat, y = price))
@@ -76,16 +81,13 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price))
 
 <img src="../fig/rmd-01-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
 
-
-This specifies that we want the carat-value on the x-axis, and the price-value, 
-of the diamond on the y-axis. 
-
 We are not actually seeing any data, because we have not specified the way the
-individual datapoints should be plotted. But we do se that the axes now have values.
+individual datapoints should be plotted. But we do see that the axes now have values.
 The data has influenced the plot!
 
-We are going to use points, in order to make a classic scatter plot. We do that
-by adding a geom_ function to our plot:
+We would like to make a classic scatter plot, and do that by adding the right
+<GEOM_FUNCTION> to our plot. The <GEOM_FUNCTION> that do this, is called
+`geom_points`:
 
 
 ~~~
@@ -95,10 +97,11 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 {: .language-r}
 
 <img src="../fig/rmd-01-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
-Note that in the template shown above, mapping was placed in the <GEOM_FUNCTION>
-rather than in the ggplot function. If we place the mapping in the ggplot function
-that mapping will be inherited by the functions we add later, unless we specify
-something different.
+
+Comparing with the original template, we did not place any mapping in the 
+<GEOM_FUNCTION> but rather in the first `ggplot()` function. 
+The  <GEOM_FUNCTION> will inherit the original mapping, if we do not provide
+a specific mapping for it.
 
 That means that:
 
@@ -118,6 +121,15 @@ ggplot(data = diamonds) +
 
 will yield the same result.
 
+We can even provide the same mapping in both places. 
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+  geom_point(mapping = aes(x = carat, y = price))
+~~~
+{: .language-r}
+
 ggplot2 is a variation on the original grammar of graphics, called *layered grammar
 of graphics*, where the individual parts of the plot are added as layers, one
 on top of another. The **+** sign adds these layers.
@@ -133,6 +145,10 @@ on top of another. The **+** sign adds these layers.
 > All geometries in ggplot2 are named using the pattern geom_
 > 
 {: .callout}
+
+
+
+
 
 ## The plus sign
 

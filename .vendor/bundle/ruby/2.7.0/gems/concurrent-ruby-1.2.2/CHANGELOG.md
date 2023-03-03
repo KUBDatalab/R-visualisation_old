@@ -1,5 +1,14 @@
 ## Current
 
+## Release v1.2.2 (24 Feb 2023)
+
+* (#993) Fix arguments passed to `Concurrent::Map`'s `default_proc`.
+
+## Release v1.2.1 (24 Feb 2023)
+
+* (#990) Add missing `require 'fiber'` for `FiberLocalVar`.
+* (#989) Optimize `Concurrent::Map#[]` on CRuby by letting the backing Hash handle the `default_proc`.
+
 ## Release v1.2.0 (23 Jan 2023)
 
 * (#962) Fix ReentrantReadWriteLock to use the same granularity for locals as for Mutex it uses.

@@ -27,11 +27,14 @@ TRÆLS: color = color. Sådan er det bare.
 
 ~~~
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point()
+  geom_point() +
+  scale_color_brewer(palette = "Dark2")
 ~~~
 {: .language-r}
 
 <img src="../fig/rmd-02-chunk1-1.png" alt="plot of chunk chunk1" width="612" style="display: block; margin: auto;" />
+
+Overvej den sidste linie - farveblindhed - hm. Nødvendigt?
 Not surprisingly, the "best" color, D have higher prices than the "worst"
 color, "J".
 
@@ -57,11 +60,12 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color, size 
 {: .language-r}
 
 <img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
-Not at good plot...
+Not at good plot... We need to think about the combination of stuff we want to
+plot. Often two plots are better than trying to cram everything into a single plot.
 
 What can be mapped to the plot depends on the geom we are using. 
 
-Calling the help function, ?geom_point, on a geom will provide insight on that
+Calling the help function, `?geom_point`, on a geom will provide insight on that
 question. Doing it on the geom_point() function, reveals that x and y are mandatory
 because they are in bold.
 
@@ -95,6 +99,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 `alpha´ controls the transparency of the points plotted, and is a handy way of
 handling overplotting, the phenomenon that multiple data points might be 
 identical. 
+
 
 
 > ## geoms

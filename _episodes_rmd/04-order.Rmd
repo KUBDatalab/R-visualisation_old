@@ -24,7 +24,7 @@ library(tidyverse)
 
 # The order of stuff
 
-Previously we made a boxbplot:
+Previously we made a boxplot:
 
 
 ```{r order_boxplot}

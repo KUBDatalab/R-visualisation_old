@@ -6,7 +6,9 @@ teaching: 10
 exercises: 5
 questions:
 - "Why are we even visualizing?"
+- "What are the metadata of this dataset?"
 objectives:
+- "Get to know the importance of visualisations"
 - "Get to know the data we are going to work with"
 keypoints:
 - "This is not an introduction to R"
@@ -32,8 +34,8 @@ A really good visualisation can even provide insight that is difficult, or
 impossible to find without.
 
 A good example is this map, where the English physician John Snow plotted the 
-deaths from Cholera in Soho, London from 19th august to 30th September
-1854. 
+deaths from Cholera in Soho, London from 19th august to 30th September 1854. 
+
 
 
 ![John Snow cholera map - Wellcome Trust, (CC BY 4.0) ](../fig/snow_cholera_map.jpg)
@@ -48,11 +50,13 @@ We are probably not going to discover patterns of equal importance in this cours
 
 ## The dataset we are working with
 
-We are going to study a dataset containing information prices and other attributes
-of 53940 diamonds:
+We are going to study a dataset containing information on prices and other attributes
+of 53940 diamonds. The dataset is included in the `ggplot2` package, that we
+installed as part of `tidyverse`
 
 
 ~~~
+library(tidyverse)
 head(diamonds)
 ~~~
 {: .language-r}
@@ -72,14 +76,13 @@ head(diamonds)
 ~~~
 {: .output}
 
-The dataset is included in the package ggplot2. 
-
+There are 10 variables in the dataset:
 
 | Variable | What is it? |
 |----------|-------------|
 | carat    | Weight of the diamond in carat (0.200 gram) |
 | cut      | Quality of the cut of the diamond (Fair, Good, Very Good, Premium, Ideal) | 
-| color    | Color of the diamon from D (best), to J (worst) |
+| color    | Color of the diamond from D (best), to J (worst) |
 | clarity  | How clear is the diamond. I1 (worst), SI2, SI1, VS2, VS1, VVS2, VVS1, IF (best) |
 | depth    | Total depth percentage = z / mean(x, y) |
 | table    | Width of the top of the diamond relative to its widest point |
@@ -88,6 +91,12 @@ The dataset is included in the package ggplot2.
 | y        | Width in mm |
 | z        | depth in mm |
 
+Slightly more detailed information can be found in the help for the dataset:
+
+~~~
+?diamonds
+~~~
+{: .language-r}
 
 
 {% include links.md %}

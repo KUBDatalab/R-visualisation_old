@@ -47,7 +47,7 @@ ggsave()
 
 
 ~~~
-Error in plot_dev(device, filename, dpi = dpi): argument "filename" is missing, with no default
+Error in ggsave(): argument "filename" is missing, with no default
 ~~~
 {: .error}
 

@@ -20,7 +20,7 @@ source: Rmd
 
 # The order of stuff
 
-Previously we made a boxbplot:
+Previously we made a boxplot:
 
 
 
