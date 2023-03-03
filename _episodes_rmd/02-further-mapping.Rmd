@@ -3,11 +3,14 @@ title: "Further mapping"
 teaching: 10
 exercises: 5
 questions:
-- "Can we map data to other parts of the plot"
+- "Can we show data using something other than position?"
+- "What is correct, colour or color?"
+- "How do I find out what a `geom_` can do?"
 objectives:
-- "FIX ME"
+- "Learn to plot more than just positions"
 keypoints:
-- "FIX ME"
+- "Data can be plottet as something other than position"
+- "Types of plots are determined by `geom_`functions"
 
 source: Rmd
 ---
