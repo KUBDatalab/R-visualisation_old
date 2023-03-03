@@ -5,7 +5,7 @@ title: "Getting started"
 teaching: 10
 exercises: 5
 questions:
-- "How do we build a ggplot?"
+- "How do we build a plot with ggplot2?"
 objectives:
 - "Get to understand the layers in ggplot2"
 - "Make our first plot"
@@ -51,6 +51,20 @@ The "<" and ">" indicates that we should supply something here.
 
 We are going to cover each element in the following.
 
+> ## What is the difference?
+>
+> ggplot2 is the library, containing different types of 
+> functions for plotting, theming the plots, changing colors
+> and lots of other stuff.
+>
+> ggplot is one of these functions in ggplot2, and the one that 
+> begins every plot we make.
+>
+> Yes it is confusing!
+> 
+{: .callout}
+
+
 ## ggplot in it self
 
 The first thing we need to provide for ggplot is some <DATA>. We are working with
@@ -86,8 +100,8 @@ individual datapoints should be plotted. But we do see that the axes now have va
 The data has influenced the plot!
 
 We would like to make a classic scatter plot, and do that by adding the right
-<GEOM_FUNCTION> to our plot. The <GEOM_FUNCTION> that do this, is called
-`geom_points:
+`<GEOM_FUNCTION>` to our plot. The `<GEOM_FUNCTION>` that do this, is called
+`geom_points()`:
 
 
 ~~~
@@ -99,8 +113,8 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 <img src="../fig/rmd-01-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
 
 Comparing with the original template, we did not place any mapping in the 
-<GEOM_FUNCTION> but rather in the first `ggplot()` function. 
-The  <GEOM_FUNCTION> will inherit the original mapping, if we do not provide
+`<GEOM_FUNCTION>` but rather in the first `ggplot()` function. 
+The `<GEOM_FUNCTION>` will inherit the original mapping, if we do not provide
 a specific mapping for it.
 
 That means that:
@@ -145,8 +159,6 @@ on top of another. The **+** sign adds these layers.
 > All geometries in ggplot2 are named using the pattern geom_
 > 
 {: .callout}
-
-
 
 
 
