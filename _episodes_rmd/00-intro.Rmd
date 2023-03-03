@@ -38,10 +38,7 @@ A really good visualisation can even provide insight that is difficult, or
 impossible to find without.
 
 A good example is this map, where the English physician John Snow plotted the 
-deaths from Cholera in Soho, London from 19th august to 30th September 1854. 
-
-
-
+deaths from Cholera in Soho, London from 19th august to 30th September 1854.
 ![John Snow cholera map - Wellcome Trust, (CC BY 4.0) ](../fig/snow_cholera_map.jpg)
 
 The concentration of deaths indicated that the source of the disease was a 
