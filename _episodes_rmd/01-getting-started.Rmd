@@ -67,7 +67,7 @@ missing is information on what exactly it is in the dataset we are trying to plo
 How should our data be *mapped* to the area of our plot? Or, what should we 
 have on the X-axis, and what should be on the Y-axis?
 
-We provide that information to ggplot using the <MAPPINGS> argument to the 
+We provide that information to ggplot using the `<MAPPINGS>` argument to the 
 ggplot function. Here we want to plot `carat` on the x-axis, and the `price`
 on the y-axis:
 
@@ -81,7 +81,7 @@ The data has influenced the plot!
 
 We would like to make a classic scatter plot, and do that by adding the right
 <GEOM_FUNCTION> to our plot. The <GEOM_FUNCTION> that do this, is called
-`geom_points`:
+`geom_points:
 
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +

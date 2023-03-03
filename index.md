@@ -5,11 +5,12 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 ---
 This course introduces plotting in R, using the ggplot2 package.
 
-We are covering the basic structure of plots.
+We are covering the basic structure of plots and how to plot in general using ggplot2.
 
-What else is happening?
+Some, but certainly not all, of the different types of plots are introduced. 
 
-FIXME - når vi har styr på hvor meget vi faktisk kan nå på to timer.
+
+
 
 <!-- this is an html comment -->
 
@@ -17,7 +18,12 @@ FIXME - når vi har styr på hvor meget vi faktisk kan nå på to timer.
 
 > ## Prerequisites
 >
-> We are going to assume that you are familiar with the following concepts:
+> We are going to assume that you have some familiarity with R and
+> RStudio, equivalent to the topics covered in our introductory course,
+> [R for absolute beginners](https://kubdatalab.github.io/beginning-R/).
+> We are going to use the datamanipulation tools from the tidyverse
+> a lot - so please brush up on the pipe %>% if you have forgotten 
+> about it.
 > 
 {: .prereq}
 
