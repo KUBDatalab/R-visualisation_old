@@ -101,7 +101,9 @@ diamonds %>% ggplot(aes(carat, y = cut)) +
 > with carat on the x-axis, and cut on the y-axis.
 > > ## Solution
 > >
-> > diamonds %>% ggplot(aes(carat, y = cut)) +
+> > diamonds %>% 
+> >   ggplot(aes(carat, y = cut)) +
+> >
 > >   geom_violin()
 > >
 > {: .solution}
