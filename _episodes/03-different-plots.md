@@ -82,6 +82,63 @@ diamonds %>%
 ~~~
 {: .language-r}
 
+## A small excursion
+
+Why are the columns in the barchart above in that order? 
+
+One might guess that they are simply in alphabetical order. 
+
+Not so! Color is a categorical variable. Diamonds either have the color 
+"D" (which is the best color), or another color (like "J", which is the worst).
+
+There are no "D.E" colors, they do not exist on a continous range.
+
+This is called "factors" in R.
+The data in a factor can take one of several values, called levels. And the
+order of these levels are what control the order in the plot.
+
+The order can be either arbitrary. Or there can exist an implicit order in the data,
+like with the colour of the diamonds, whare D is the best color, and J is the
+worst. These types of orderede categorical data are called ordinal data.
+
+They look like this:
+
+~~~
+diamonds %>% 
+  select(cut, color, clarity) %>% 
+  str()
+~~~
+{: .language-r}
+
+
+
+~~~
+tibble [53,940 × 3] (S3: tbl_df/tbl/data.frame)
+ $ cut    : Ord.factor w/ 5 levels "Fair"<"Good"<..: 5 4 2 4 2 3 3 3 1 3 ...
+ $ color  : Ord.factor w/ 7 levels "D"<"E"<"F"<"G"<..: 2 2 2 6 7 7 6 5 2 5 ...
+ $ clarity: Ord.factor w/ 8 levels "I1"<"SI2"<"SI1"<..: 2 3 5 4 2 6 7 3 4 5 ...
+~~~
+{: .output}
+Note that even though the colour "D" is better than "E", the levels 
+of the color factor indicates that "D<E". 
+
+All this just to say: We can control the order of columns in the plot, by
+controlling the order of the levels of the categorical value we are plotting:
+
+~~~
+diamonds %>% 
+  mutate(color = fct_rev(color)) %>%  
+  ggplot(aes(color)) +
+  geom_bar()
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-03-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+
+`fct_rev` is a function that reverses the order of a factor. It comes from the
+library `forcats` that makes it easier to work with categorical data.
+
+
 
 ## boxplots
 
@@ -104,7 +161,7 @@ and splitting them up in one plot per cut, on the y-axis.
 Boxplots are not necessarily the best option for showing distributions.
 A good alternative could be violinplots:
 
-<img src="../fig/rmd-03-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-03-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
 
 > ## exercise
@@ -113,7 +170,9 @@ A good alternative could be violinplots:
 > with carat on the x-axis, and cut on the y-axis.
 > > ## Solution
 > >
-> > diamonds %>% ggplot(aes(carat, y = cut)) +
+> > diamonds %>% 
+> >   ggplot(aes(carat, y = cut)) +
+> >
 > >   geom_violin()
 > >
 > {: .solution}
@@ -123,8 +182,7 @@ A good alternative could be violinplots:
 
 ## And many more
 
-ggplot2 is born with a multitude of different plots. And ggplot2 can be
-extended. 
+ggplot2 is born with a multitude of different plots. 
 
 A complete list of plots will be very long, and take up all the time for this course.
 
@@ -132,6 +190,14 @@ Take a look at https://r-graph-gallery.com/
 
 or at https://kubdatalab.github.io/R-graphs/ (NB a work in progress), where we will collect weird and wonderful plots, when to use them, when not to 
 use them. And how to make them.
+
+
+ggplot2 can even be extended. Two of the more interesting extensions are:
+
+`ggforce` extends ggplot2 with specialised plottypes.
+
+`gganimate` makes it easyish to make animated plots using ggplot2
+
 
 
 {% include links.md %}

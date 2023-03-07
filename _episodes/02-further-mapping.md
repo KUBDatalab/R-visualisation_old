@@ -130,15 +130,10 @@ identical.
 > 
 {: .callout}
 
+### What kind of shapes can we plot?
 
-
-
-~~~
-library(ggpubr)
-ggpubr::show_point_shapes()
-~~~
-{: .language-r}
-
+In principle any kind of shape. But without having to program them
+ourself, these are available directly in ggplot. They are numbered, because it is easier to write "14" than "square box with upwardspointing triangle inside".
 
 
 ~~~
@@ -147,7 +142,7 @@ Adding another scale for y, which will replace the existing scale.
 ~~~
 {: .output}
 
-<img src="../fig/rmd-02-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-02-point_shapes-1.png" alt="plot of chunk point_shapes" width="612" style="display: block; margin: auto;" />
 
 
 
