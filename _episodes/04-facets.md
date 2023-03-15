@@ -18,13 +18,53 @@ source: Rmd
 
 
 
-### FACET_FUNCTION
+### Small multiples
 
-There are more variables in this dataset. But it becomes increasingly difficult
-to add information to a two dimensional plot. One way to overcome this might be to 
-make more than one plot, based on values in the dataset.
+In one plot we quickly runs into the problem of trying to plot 
+too much information in the plot. Here we plot the price against carat,
+color by the color of the diamonds. And represent their clarity by the
+shape of the points:
 
-This is called facetting:
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color, shape = clarity)) +
+  geom_point()
+~~~
+{: .language-r}
+
+
+
+~~~
+Warning: Using shapes for an ordinal variable is not advised
+~~~
+{: .warning}
+
+
+
+~~~
+Warning: The shape palette can deal with a maximum of 6 discrete values because
+more than 6 becomes difficult to discriminate; you have 8. Consider
+specifying shapes manually if you must have them.
+~~~
+{: .warning}
+
+
+
+~~~
+Warning: Removed 5445 rows containing missing values (`geom_point()`).
+~~~
+{: .warning}
+
+<img src="../fig/rmd-04-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+
+This is probably not the best way to discover patterns in the data. It is 
+actually so bad that ggplot warns us that we are using too many different shapes.
+
+One way of handling that, is to plot "small multiples" of the data. 
+
+Instead of plotting information on the clarity of the diamonds in one plot,
+along with all the other information, we make one plot for each value of 
+clarity. This is called facetting:
 
 
 ~~~
@@ -34,7 +74,62 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-04-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+Here we can see that the price rises more rapidly with size, for the better 
+clarities, something that would have been impossible to see in the previous plot.
+
+> ## Hidden connections
+>
+> facet_wrap is specified using the `~clarity` notation. 
+> 
+> This is similar to the way R specifies formulas:
+> 
+> y ~ x would in eg. regressions in R specify that y is a function of x. 
+> 
+> Here we can think of it as "making plots that are a function of clarity"
+> 
+{: .callout}
+
+
+
+ggplot(data = diamonds, mapping = aes(x = depth, y = price, color = color)) +
+  geom_point() +
+  facet_wrap(~cut)
+
+ggplot(data = diamonds, mapping = aes(x = depth, y = price)) +
+  geom_point() +
+  facet_wrap(~cut)
+
+
+> ## exercise
+>
+> Plot price as a function of depth (price on the y-axis, depth on the x-axis),
+> and facet by cut. If you want a colorful plot, color the points
+> by color.
+>
+> > ## Solution
+> >
+> > ggplot(data = diamonds, mapping = aes(x = depth, y = price, color = color)) +
+> >
+> >  geom_point() +
+> >
+> >  facet_wrap(~cut)
+> >
+> > Note that for the better cuts, diamonds are cut to pretty
+> > specific proportions. Worse (Fair) diamonds have more 
+> > varied proportions.
+> >
+> {: .solution}
+{: .challenge}
+
+## More than one multiple
+
+We can expand on the "small multiple" concept, by plotting the
+facets in a grid, defined by two categorical values.
+
+In this plot we plot price as a function of carate, and 
+make individual plots for each combination of clarity and color:
+
 
 ~~~
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
@@ -43,7 +138,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-04-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
 
+Be careful using facets, especially *facet_grid* when you work
+with small datasets. You might end up with too little data in 
+each facet.
 
 {% include links.md %}

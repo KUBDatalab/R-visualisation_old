@@ -82,6 +82,8 @@ diamonds %>%
 ~~~
 {: .language-r}
 
+<img src="../fig/rmd-03-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+
 ## A small excursion
 
 Why are the columns in the barchart above in that order? 
@@ -125,6 +127,7 @@ of the color factor indicates that "D<E".
 All this just to say: We can control the order of columns in the plot, by
 controlling the order of the levels of the categorical value we are plotting:
 
+
 ~~~
 diamonds %>% 
   mutate(color = fct_rev(color)) %>%  
@@ -159,7 +162,7 @@ and splitting them up in one plot per cut, on the y-axis.
 ## Violinplots
 
 Boxplots are not necessarily the best option for showing distributions.
-A good alternative could be violinplots:
+A good alternative could be violinplots. They show a *density plot* - basically a histogram with infinite bins - for each group, blotted symmetrically around an axis:
 
 <img src="../fig/rmd-03-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
@@ -182,22 +185,16 @@ A good alternative could be violinplots:
 
 ## And many more
 
-ggplot2 is born with a multitude of different plots. 
-
-A complete list of plots will be very long, and take up all the time for this course.
-
-Take a look at https://r-graph-gallery.com/
-
-or at https://kubdatalab.github.io/R-graphs/ (NB a work in progress), where we will collect weird and wonderful plots, when to use them, when not to 
+ggplot2 is born with a multitude of different plots. A complete list of plots will be very long, and take up all the time for this course.
+Take a look at [The R Graph Gallery](https://r-graph-gallery.com/)
+or at [Graphs in R](https://kubdatalab.github.io/R-graphs/) (NB a work in progress), where we will collect weird and wonderful plots, when to use them, when not to 
 use them. And how to make them.
 
-
-ggplot2 can even be extended. Two of the more interesting extensions are:
+ggplot2 is written as an extensible package, meaning that developers can create packages making plots that are not included in ggplot2, or introduce more advanced functionality around plots. Two of the more interesting extensions are:
 
 `ggforce` extends ggplot2 with specialised plottypes.
 
 `gganimate` makes it easyish to make animated plots using ggplot2
-
 
 
 {% include links.md %}

@@ -18,9 +18,101 @@ source: Rmd
 
 
 
+## Changing scale and coordinates
+
+ggplot choses a coordinate system for us. Like bins in 
+histograms, that coordinate system might not be the right for
+our data.
+
+One of the more commonly cited "rules" for plots and graphs is
+that the coordinate system should begin at zero. And ggplot
+does not necessarily give us a coordinate system that begins at zero. So how do we force it to?
 
 
-The coordinate system can be changed. If we want to flip the coordinates, we
+~~~
+diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point()
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+
+We can control the axes precisely by adding xlim and/or ylim
+to the plot. We need to provide these functions with a 
+vector of length 2, indicating the minimum and maximum values
+we want:
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  xlim(c(0,80)) +
+  ylim(c(0,100))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+
+It is nice to be able to control the two axes seperately. 
+Because the coordinate system should not always begin at zero.
+Especially time-series, showing a development over time, 
+should often *not* begin at zero. 
+
+### Zooming
+
+Let us zoom in on the plot above, and look at tables between
+45 and 75, by adjusting the ylim:
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  ylim(c(45,75))
+~~~
+{: .language-r}
+
+
+
+~~~
+Warning: Removed 5 rows containing missing values (`geom_point()`).
+~~~
+{: .warning}
+
+<img src="../fig/rmd-05-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+
+That returns a warning! Some data is not within the limits we
+placed on the y-axis. This might not be a problem. Or it might.
+
+If we are doing more advanced stuff like scaling the axes (eg. logarithmically), cutting of data might be a bad idea.
+
+Zooming in on particular areas of the plot is done better 
+using the `coord_cartesian` function:
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  coord_cartesian(ylim = c(45,75))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+
+This will not cut out data from the plot, they are still there
+for other geoms that might need them, they are simply not
+plotted.
+
+## Changing the coordinate system
+
+We saw above that we could adjust the coordinate system in order
+to zoom in on specific parts of the plot. We can do other things
+with the coordinate system!
+
+Should we want to flip the coordinates, we
 could interchange the x and y values in the mapping argument.
 Or we could add a coordinate function that changes the coordinate system:
 
@@ -32,13 +124,22 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-025-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
-Other coord_ functions exists, the most commonly used are coord_flip and coord_polar:
+<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
 
-mhp lagkage
+Other coord_ functions exists eg coord_polor, that allows us 
+to plot polar coordinates. And what might we use that for?
 
-DET HER SKAL DER NOK KIGGES LIDT PÅ... SÅDAN DIDAKTISK NOK TIL AT JEG SELV 
-FORSTÅR HVAD DER FOREGÅR...
+A very popular plot type is pie charts. Pie charts in ggplot
+can be defined by making a stacked bar-chart, and changing the
+coordinate system to polar.
+
+We begin by filtering the data set to only include diamonds
+with the color "G", and then make a barchart. We add the 
+argument `position = "stack"` to `geom_bar` to stack the bars
+rather than having them side by side. And then we adjust
+the coordinate system to be polar (the y-axis specifically), 
+beginning at 0:
+
 
 ~~~
 diamonds %>% 
@@ -46,11 +147,28 @@ diamonds %>%
   filter(color == "G") %>% 
   ggplot(aes(x= color, fill = cut)) +
   geom_bar(position = "stack") +
-    coord_polar("y", start=0) 
+  coord_polar("y", start=0) 
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-025-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+
+Og en caution om hvorfor ggplot ikke har en indbygget
+geom_pie.
+
+
+> ## Hvad f***** er polære koordinater
+>
+> ggplot2 is the library, containing different types of 
+> functions for plotting, theming the plots, changing colors
+> and lots of other stuff.
+>
+> ggplot is one of these functions in ggplot2, and the one that 
+> begins every plot we make.
+>
+> Yes it is confusing!
+> 
+{: .callout}
 
 
 
@@ -61,7 +179,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-025-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 That might not be that useful working with diamonds.
 
 
@@ -79,7 +197,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-025-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
 
 
 
