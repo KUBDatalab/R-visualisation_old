@@ -137,7 +137,7 @@ Warning in grid.Call(C_stringMetric, as.graphicsAnnot(x$label)): font family
 ~~~
 {: .warning}
 
-<img src="../fig/rmd-05-geom_demo-1.png" alt="plot of chunk geom_demo" width="650px" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-geom_demo-1.png" alt="plot of chunk geom_demo" width="650px" style="display: block; margin: auto;" />
 
 
 Jeg ved ikke hvordan 
@@ -224,7 +224,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price))
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
 
 We do get the two scales scaled to the ranges of data we have on the x and y axes.
 
@@ -270,7 +270,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
 
 Note that we add geoms to our original (boring) plot by using the + operator.
 
@@ -285,7 +285,7 @@ ggplot(diamonds, aes(x, price)) + geom_point()
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10" width="612" style="display: block; margin: auto;" />
 
 The + operator is rather useful, because it allows us to modify existing plots. We can save the very first plot we made in a variable:
 
@@ -302,7 +302,7 @@ diamond_plot + geom_point()
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-07-unnamed-chunk-12-1.png" alt="plot of chunk unnamed-chunk-12" width="612" style="display: block; margin: auto;" />
 Anything you put in the ggplot() function can be seen by any geom layers that you add (i.e., these are universal plot settings). This includes the x- and y-axis you set up in aes().
 You can also specify aesthetics for a given geom independently of the aesthetics defined globally in the ggplot() function.
 The + sign used to add layers must be placed at the end of each line containing a layer. If, instead, the + sign is added in the line before the other layer, ggplot2 will not add the new layer and will return an error message.

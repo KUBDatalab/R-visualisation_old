@@ -78,7 +78,7 @@ If we are doing more advanced stuff like scaling the axes (eg. logarithmically),
 Zooming in on particular areas of the plot is done better 
 using the `coord_cartesian` function:
 
-```{r}
+```{r cartesian-zoom}
 diamonds %>% 
   ggplot(aes(depth, table)) +
   geom_point() +

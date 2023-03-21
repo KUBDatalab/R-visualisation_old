@@ -30,7 +30,7 @@ diamonds %>% ggplot(aes(carat, y = cut)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-order_boxplot-1.png" alt="plot of chunk order_boxplot" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-06-order_boxplot-1.png" alt="plot of chunk order_boxplot" width="612" style="display: block; margin: auto;" />
 
 Knowing what we know about the order of terms for the quality of the diamonds,
 this makes sense. Fair is the lowest quality of the cut, ideal the best.
@@ -177,7 +177,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-06-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
 
 
 
