@@ -100,7 +100,7 @@ We can add a smoothing function to a plot, that adds a trendline to the data.
 This smoother is based on all the data available to it. Let us make two plots,
 one where we zoom using `ylim`, and one where we zoom using `coord_cartesian`:
 
-```{r}
+```{r zoom_comparison}
 library(patchwork)
 p1 <- diamonds %>% 
   ggplot(aes(depth, table)) +
@@ -199,12 +199,7 @@ diamonds %>%
 {: .caution}
 
 
-```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point() +
-  coord_polar()
-```
-That might not be that useful working with diamonds.
+
 
 
 ## Log -scale
