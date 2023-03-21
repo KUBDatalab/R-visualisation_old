@@ -16,6 +16,7 @@ source: Rmd
 source("../bin/chunk-options.R")
 knitr_fig_path("05-")
 library(tidyverse)
+library(patchwork)
 ```
 
 ```{r setup, include=FALSE}
@@ -60,13 +61,13 @@ should often *not* begin at zero.
 ### Zooming
 
 Let us zoom in on the plot above, and look at tables between
-45 and 75, by adjusting the ylim:
+50 and 70, by adjusting the ylim:
 
 ```{r}
 diamonds %>% 
   ggplot(aes(depth, table)) +
   geom_point() +
-  ylim(c(45,75))
+  ylim(c(50,70))
 ```
 
 That returns a warning! Some data is not within the limits we
@@ -81,12 +82,46 @@ using the `coord_cartesian` function:
 diamonds %>% 
   ggplot(aes(depth, table)) +
   geom_point() +
-  coord_cartesian(ylim = c(45,75))
+  coord_cartesian(ylim = c(50,70))
 ```
 
 This will not cut out data from the plot, they are still there
 for other geoms that might need them, they are simply not
 plotted.
+
+### Why would that be a problem?
+
+That would be a problem, because the `ylim` approach removes data before the 
+plot is actually made. Functions that would use these removed data will no
+longer have access to them. Let us show - without going deep into what is 
+actually happening, the difference.
+
+We can add a smoothing function to a plot, that adds a trendline to the data.
+This smoother is based on all the data available to it. Let us make two plots,
+one where we zoom using `ylim`, and one where we zoom using `coord_cartesian`:
+```{r}
+library(patchwork)
+p1 <- diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  ylim(c(50,70)) +
+  geom_smooth() +
+  ggtitle("Zoom by ylim", subtitle = "Smooth only uses a subset of data")
+
+p2 <- diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  coord_cartesian(ylim = c(50,70)) +
+  geom_smooth() +
+  ggtitle("Zoom by coord_cartesian", subtitle = "Smooth uses all data") 
+
+
+p1 + p2
+
+```
+
+The trendlines are very different, because the data they are based on is
+different.
 
 ## Changing the coordinate system
 
@@ -131,7 +166,7 @@ Og en caution om hvorfor ggplot ikke har en indbygget
 geom_pie.
 
 
-> ## Hvad f***** er polære koordinater
+> ## What the 
 >
 > ggplot2 is the library, containing different types of 
 > functions for plotting, theming the plots, changing colors

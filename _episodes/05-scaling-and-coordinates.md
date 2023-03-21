@@ -63,21 +63,21 @@ should often *not* begin at zero.
 ### Zooming
 
 Let us zoom in on the plot above, and look at tables between
-45 and 75, by adjusting the ylim:
+50 and 70, by adjusting the ylim:
 
 
 ~~~
 diamonds %>% 
   ggplot(aes(depth, table)) +
   geom_point() +
-  ylim(c(45,75))
+  ylim(c(50,70))
 ~~~
 {: .language-r}
 
 
 
 ~~~
-Warning: Removed 5 rows containing missing values (`geom_point()`).
+Warning: Removed 12 rows containing missing values (`geom_point()`).
 ~~~
 {: .warning}
 
@@ -96,7 +96,7 @@ using the `coord_cartesian` function:
 diamonds %>% 
   ggplot(aes(depth, table)) +
   geom_point() +
-  coord_cartesian(ylim = c(45,75))
+  coord_cartesian(ylim = c(50,70))
 ~~~
 {: .language-r}
 
@@ -105,6 +105,71 @@ diamonds %>%
 This will not cut out data from the plot, they are still there
 for other geoms that might need them, they are simply not
 plotted.
+
+### Why would that be a problem?
+
+That would be a problem, because the `ylim` approach removes data before the 
+plot is actually made. Functions that would use these removed data will no
+longer have access to them. Let us show - without going deep into what is 
+actually happening, the difference.
+
+We can add a smoothing function to a plot, that adds a trendline to the data.
+This smoother is based on all the data available to it. Let us make two plots,
+one where we zoom using `ylim`, and one where we zoom using `coord_cartesian`:
+
+~~~
+library(patchwork)
+p1 <- diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  ylim(c(50,70)) +
+  geom_smooth() +
+  ggtitle("Zoom by ylim", subtitle = "Smooth only uses a subset of data")
+
+p2 <- diamonds %>% 
+  ggplot(aes(depth, table)) +
+  geom_point() +
+  coord_cartesian(ylim = c(50,70)) +
+  geom_smooth() +
+  ggtitle("Zoom by coord_cartesian", subtitle = "Smooth uses all data") 
+
+
+p1 + p2
+~~~
+{: .language-r}
+
+
+
+~~~
+`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
+~~~
+{: .output}
+
+
+
+~~~
+Warning: Removed 12 rows containing non-finite values (`stat_smooth()`).
+~~~
+{: .warning}
+
+
+
+~~~
+Warning: Removed 12 rows containing missing values (`geom_point()`).
+~~~
+{: .warning}
+
+
+
+~~~
+`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'
+~~~
+{: .output}
+
+<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+
+The trendlines are very different, because the data they are based on is
+different.
 
 ## Changing the coordinate system
 
@@ -124,7 +189,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
 
 Other coord_ functions exists eg coord_polor, that allows us 
 to plot polar coordinates. And what might we use that for?
@@ -151,13 +216,13 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
 Og en caution om hvorfor ggplot ikke har en indbygget
 geom_pie.
 
 
-> ## Hvad f***** er polære koordinater
+> ## What the 
 >
 > ggplot2 is the library, containing different types of 
 > functions for plotting, theming the plots, changing colors
@@ -179,7 +244,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
 That might not be that useful working with diamonds.
 
 
@@ -197,7 +262,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10" width="612" style="display: block; margin: auto;" />
 
 
 
