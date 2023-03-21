@@ -117,6 +117,7 @@ We can add a smoothing function to a plot, that adds a trendline to the data.
 This smoother is based on all the data available to it. Let us make two plots,
 one where we zoom using `ylim`, and one where we zoom using `coord_cartesian`:
 
+
 ~~~
 library(patchwork)
 p1 <- diamonds %>% 
@@ -134,7 +135,7 @@ p2 <- diamonds %>%
   ggtitle("Zoom by coord_cartesian", subtitle = "Smooth uses all data") 
 
 
-p1 + p2
+print(p1 + p2)
 ~~~
 {: .language-r}
 
@@ -191,7 +192,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 
 <img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
 
-Other coord_ functions exists eg coord_polor, that allows us 
+Other coord_ functions exists eg coord_polar, that allows us 
 to plot polar coordinates. And what might we use that for?
 
 A very popular plot type is pie charts. Pie charts in ggplot
@@ -218,22 +219,29 @@ diamonds %>%
 
 <img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
-Og en caution om hvorfor ggplot ikke har en indbygget
-geom_pie.
-
-
-> ## What the 
+> ## What are polar coordinates?
 >
-> ggplot2 is the library, containing different types of 
-> functions for plotting, theming the plots, changing colors
-> and lots of other stuff.
+> Our ordinary coordinate system is a cartesian coordinate system. 
+> Each point in the system are defined by two values, X and Y, representing 
+> the distance from the origin or reference point of the coordinate system.
+> 
+> In a polar coordinate system, each point in the plane is defined by two values: 
+> radius (r) and angle (θ). The radius represents the distance from a reference 
+> point (called the pole) to the point in question, and the angle is the angle 
+> formed between the positive x-axis (in ggplot2, this is usually the horizontal
+> axis) and the line connecting the pole to the point.
 >
-> ggplot is one of these functions in ggplot2, and the one that 
-> begins every plot we make.
->
-> Yes it is confusing!
+> In a polar coordinate system, we still have a point of origin, 0,0
+> but now the points are plottet using an angle from the x-axis and a 
+> distance 
 > 
 {: .callout}
+
+> ## Why does geom_pie not exist?
+> 
+> 
+>
+{: .caution}
 
 
 
