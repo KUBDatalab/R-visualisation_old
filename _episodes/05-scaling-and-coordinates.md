@@ -167,7 +167,7 @@ Warning: Removed 12 rows containing missing values (`geom_point()`).
 ~~~
 {: .output}
 
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-zoom_comparison-1.png" alt="plot of chunk zoom_comparison" width="612" style="display: block; margin: auto;" />
 The trendlines are very different, because the data they are based on is
 different.
 
@@ -189,7 +189,7 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
 
 Other coord_ functions exists eg coord_polar, that allows us 
 to plot polar coordinates. And what might we use that for?
@@ -216,7 +216,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
 
 > ## What are polar coordinates?
 >
@@ -256,15 +256,6 @@ diamonds %>%
 
 
 
-~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point() +
-  coord_polar()
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-05-unnamed-chunk-9-1.png" alt="plot of chunk unnamed-chunk-9" width="612" style="display: block; margin: auto;" />
-That might not be that useful working with diamonds.
 
 
 ## Log -scale
@@ -281,7 +272,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-10-1.png" alt="plot of chunk unnamed-chunk-10" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
 
 
 
