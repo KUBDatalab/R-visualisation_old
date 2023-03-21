@@ -168,7 +168,6 @@ Warning: Removed 12 rows containing missing values (`geom_point()`).
 {: .output}
 
 <img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
-
 The trendlines are very different, because the data they are based on is
 different.
 
@@ -237,9 +236,21 @@ diamonds %>%
 > 
 {: .callout}
 
-> ## Why does geom_pie not exist?
+
+> ## Why does geom_pie() not exist?
 > 
-> 
+> ggplot2 is an opinionated package. It forces us to think about including 0,0
+> in our plots. When we make histograms, the number of bins are chosen to 
+> be particularly bad, so we have to choose something different.
+>
+> And piecharts are a very bad idea. They map values to an
+> angle in the plot, and humans are not very good at seeing the difference
+> between two angles. 
+>
+> Rare exceptions exists. But making pie charts should be done with EXTREME caution.
+>
+> Too long; didn't read: ggplot2 considers piecharts to be so bad that it 
+> tries to prevent us from making them.
 >
 {: .caution}
 
