@@ -18,6 +18,21 @@ source: Rmd
 
 
 
+
+Og mange flerE:
+
+~~~
+lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE)
+~~~
+{: .language-r}
+
+
+
+~~~
+Error in lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE): could not find function "%>%"
+~~~
+{: .error}
+
 Other online courses
 
 Other kub-datalab courses

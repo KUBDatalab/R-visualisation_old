@@ -189,10 +189,66 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-flipped-coords-1.png" alt="plot of chunk flipped-coords" width="612" style="display: block; margin: auto;" />
 
-Other coord_ functions exists eg coord_polar, that allows us 
-to plot polar coordinates. And what might we use that for?
+
+
+Other coord_ functions exists.
+
+### Log-scale
+
+With data that span several orders of magnitude, it is often useful to plot it in a
+logarithmic or double-logarithmic coordinate system. That might reveal structure
+in the data that is otherwise invisible.
+
+And sometimes, eg in chemistry studying reaction kinetics, we use 
+logarithmic scales to address logarithms in the model we have for our data.
+
+By default ggplot comes with the function `scale_y_log10` that will transform
+the y-axis to a logarithmic scale using base 10 for the logarithm. The equivalent
+function `scale_x_log10` does the same for the x-axis. If you need the natural
+logarithm, you will need to look into the package `scales`:
+
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  scale_y_log10()
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-log-transform-y-1.png" alt="plot of chunk log-transform-y" width="612" style="display: block; margin: auto;" />
+This plot reveals a gap in the prices. There are no diamonds in this dataset
+with a price between 1454 USD and 1546 USD. The educated guess is an error in 
+the original dataset.
+
+> ## exercise
+>
+> Try to plot price against carat (carat on the x-axis, and price on y-axis) 
+> with both axes log transformed.
+> 
+> What new insights do we gain?
+>
+> > ## Solution
+> >
+> > ggplot(data = diamonds, mapping = aes(x = depth, y = price)) +
+> >
+> >  scale_x_log10() +
+> >
+> >  scale_y_log10()
+> >
+> > The correlation between carat and price appears to be roughly linear
+> > (with a lot of noise) then both carat and price are log transformed.
+> >
+> {: .solution}
+{: .challenge}
+
+
+
+
+### Pie charts - the forbidden charts
 
 A very popular plot type is pie charts. Pie charts in ggplot
 can be defined by making a stacked bar-chart, and changing the
@@ -216,7 +272,7 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
 
 > ## What are polar coordinates?
 >
@@ -253,30 +309,6 @@ diamonds %>%
 > tries to prevent us from making them.
 >
 {: .caution}
-
-
-
-
-
-## Log -scale
-
-TÆNK LIDT OVER DEN... forklaring. Hvorfor logaritmerer vi. 
-Måske bedre eksempel end herunder.
-
-
-~~~
-diamonds %>% 
-  ggplot(aes(carat, price)) +
-  geom_point() +
-  scale_y_log10()
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
-
-
-
-
 
 
 {% include links.md %}
