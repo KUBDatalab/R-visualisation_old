@@ -133,7 +133,7 @@ Should we want to flip the coordinates, we
 could interchange the x and y values in the mapping argument.
 Or we could add a coordinate function that changes the coordinate system:
 
-```{r}
+```{r flipped-coords}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
   geom_point() +
   coord_flip()
@@ -158,7 +158,7 @@ function `scale_x_log10` does the same for the x-axis. If you need the natural
 logarithm, you will need to look into the package `scales`:
 
 
-```{r}
+```{r log-transform-y}
 diamonds %>% 
   ggplot(aes(carat, price)) +
   geom_point() +
