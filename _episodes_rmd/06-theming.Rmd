@@ -1,0 +1,118 @@
+---
+title: "Theming"
+teaching: 10
+exercises: 5
+questions:
+- "FIX ME"
+objectives:
+- "FIX ME"
+keypoints:
+- "FIX ME"
+
+source: Rmd
+---
+
+```{r, include = FALSE}
+source("../bin/chunk-options.R")
+knitr_fig_path("06-")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+### THEME_FUNCTION
+
+Every part of the plot can be changed. The grey background might be annoying
+The gridlines might be confusing.
+
+These non-data components of the plots can be controlled using the family of `theme`
+functions:
+
+```{r}
+ggplot(diamonds, aes(carat, price)) +
+  geom_point() +
+  theme_bw()
+```
+More exists:
+```{r different_themes, echo = F}
+base <- diamonds %>% 
+  sample_frac(0.2) %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() 
+
+default <- base +
+  ggtitle("default")
+
+bw <- base +
+   theme_bw() +
+  ggtitle("bw")
+
+classic <- base +
+   theme_classic()  +
+  ggtitle("classic")
+
+dark <- base +
+ theme_dark() +
+  ggtitle("dark")
+
+gray <- base +
+  theme_gray() +
+  ggtitle("gray")
+
+light <- base +
+  theme_light() +
+  ggtitle("light")
+
+linedraw <- base +
+  theme_linedraw() +
+  ggtitle("linedraw")
+
+minimal <- base +
+  theme_minimal() +
+  ggtitle("minimal")
+
+void <- base +
+  theme_void() +
+  ggtitle("void")
+
+
+
+(default | bw | classic) / (dark | gray|light) / (linedraw|minimal|void)
+```
+
+> ## Notice the pattern?
+>
+> A general pattern of function names in ggplot2 can be seen.
+>
+> Themes are named "theme_" and then the name of the theme. We saw the
+> same pattern with the scale functions: "scale_" and then the axis, followed
+> by what we did to the axis, eg: "scale_y_log10"
+>
+{.callout}
+
+### Even more theming
+
+*Every* element in the plot can be controlled. The `theme()`  function is the
+way to do that:
+
+```{r}
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  theme_dark() +
+  theme(axis.text.y = element_text(angle= 45))
+```
+
+Angling the labels in a plot can be good for readability. However the actual
+way to do it can be a bit more involved as you see above. Read the help for
+theme to get at complete list of things that can be changed. There are 97 
+things in total.
+
+Also note, that we can add theming on top of previous theming. Here we begin
+with a built in theme that we like, and change the parts we want to change. 
+
+
+
+{% include links.md %}
