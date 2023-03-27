@@ -75,8 +75,32 @@ theme to get at complete list of things that can be changed. There are 97
 things in total.
 
 Also note, that we can add theming on top of previous theming. Here we begin
-with a built in theme that we like, and change the parts we want to change. 
+with a built-in theme that we like, and change the parts we want to change. 
+
+Finally note, that the order is important:
 
 
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  theme_dark() +
+  theme(axis.text.y = element_text(angle= 45))
+~~~
+{: .language-r}
+and 
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  theme(axis.text.y = element_text(angle= 45)) +
+  theme_dark() 
+~~~
+{: .language-r}
+
+Will not give the same result. `theme_dark` has a setting for the way the text
+on the y-axis is shown, and will overwrite the changes done before calling it.
 
 {% include links.md %}

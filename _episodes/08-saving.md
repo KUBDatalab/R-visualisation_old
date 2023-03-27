@@ -22,9 +22,14 @@ saving private ggplot
 
 ## It would be nice to be able to save the plot.
 
+Remember that there are different fileformats.
+
+Also - adjusting size is most easy done by adjusting 
+the plot window directly in Rstudio
+
 både som sidste plot. brug plotte panelet i rstudio til at justere.
 
-Men også muligt at bestemme størrelse direkte.
+Men også muligt at bestemme størrelse direkte. men det er ikke let. Indtil man har gjort det - så er det lettere.
 
 Forskellige filformater.
 hvad er godt til hvad.
