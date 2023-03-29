@@ -37,7 +37,7 @@ be a bit overwhelming, so consider looking at the "[Data Visualization](https://
 ggplot2 comes with a lot of functionality. This is the
 list of build-in geoms in ggplot2:
 
-```{r echo = F}
+```{r liste-over-geomer, echo = F, warning=F, message=F}
 library(ggplot2)
 library(dplyr)
 lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE)
