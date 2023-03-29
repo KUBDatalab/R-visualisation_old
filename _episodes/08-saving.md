@@ -22,54 +22,52 @@ saving private ggplot
 
 ## It would be nice to be able to save the plot.
 
-Remember that there are different fileformats.
+Saving a plot can be done directly from the plot pane in
+RStudio
+![Saving from Rstudio](../fig/08-saving-plot.png)
 
-Also - adjusting size is most easy done by adjusting 
-the plot window directly in Rstudio
 
-både som sidste plot. brug plotte panelet i rstudio til at justere.
-
-Men også muligt at bestemme størrelse direkte. men det er ikke let. Indtil man har gjort det - så er det lettere.
-
-Forskellige filformater.
-hvad er godt til hvad.
-
+ggplot2 also includes a function for saving the last plot
+you made. This function will save it as "myimage.png" in your
+current directory. The image will be 800x600 pixels (px) in size, and with a resolution of 300 dpi.
 
 ~~~
-diamonds %>% 
-  ggplot(aes(carat, price)) +
-  geom_point()
+ggsave("myimage.png", width = 800, 
+       height = 600, units = "px",
+       dpi = 300)
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-08-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+However, this does not look very nice:
+![Nasty looking](../fig/myimage.png)
+The points are too big for the plot!
 
-~~~
-ggsave()
-~~~
-{: .language-r}
+Be prepared for a lot of fiddling about with your plots if
+you want to use `ggsave()`. 
 
+Adjusting size, and getting af nice image is often easier 
+adjusting the size of the plot pane directly in RStudio. 
 
+The saved image will reflect what you see on the screen.
 
-~~~
-Error in ggsave(): argument "filename" is missing, with no default
-~~~
-{: .error}
+## There is more than JPG and PNG in the world!
+JPG is a popular format for saving images. It produces nice,
+small files. PNG is also a popular format for images.
 
+By default, ggsave is able to recognize the extension you
+give your file name (.png in the example above), and save 
+to these formats:
 
+* eps
+* ps
+* tex
+* pdf
+* jpeg/jpg
+* tiff
+* png
+* bmp
+* svg
+* wmf (only on windows)
 
-~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point(alpha = 0.1) +
-  theme_dark() +
-  theme(panel.background = element_rect(fill = "black"))
-~~~
-{: .language-r}
-
-<img src="../fig/rmd-08-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
-
-
-
-saving plottet.
 
 {% include links.md %}
