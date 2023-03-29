@@ -1,5 +1,5 @@
 current directory: /home/runner/work/R-visualisation/R-visualisation/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c
-/opt/hostedtoolcache/Ruby/2.7.7/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/2.7.7/x64/lib/ruby/2.7.0 -r ./siteconf20230329-11260-1dsypvx.rb extconf.rb
+/opt/hostedtoolcache/Ruby/2.7.7/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/2.7.7/x64/lib/ruby/2.7.0 -r ./siteconf20230329-11081-1jqz8va.rb extconf.rb
 checking for ffi_prep_closure_loc() in -lffi... yes
 checking for ffi_prep_cif_var()... yes
 checking for ffi_raw_call()... yes
@@ -153,5 +153,5 @@ Makefile:257: warning: overriding recipe for target '.m.S'
 :257: warning: ignoring old recipe for target '.m.S'
 Makefile:261: warning: overriding recipe for target 'ffi_c.so'
 :261: warning: ignoring old recipe for target 'ffi_c.so'
-/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20230329-11260-18bt4vb
+/usr/bin/install -c -m 0755 ffi_c.so ./.gem.20230329-11081-lh9305
 make[1]: Leaving directory '/home/runner/work/R-visualisation/R-visualisation/.vendor/bundle/ruby/2.7.0/gems/ffi-1.15.5/ext/ffi_c'

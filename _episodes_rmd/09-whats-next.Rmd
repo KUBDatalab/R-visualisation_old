@@ -21,22 +21,53 @@ knitr_fig_path("09-")
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## What should I do next?
 
-Og mange flerE:
-```{r}
+First of all: If you do not have data you want to visualize 
+already. Find some!
+
+[Kaggle](https://www.kaggle.com/datasets) host competitions 
+in machine learning. For the use of those competitions, they
+give access to a lot of interesting datasets to work with.
+With more than 200.000 datasets at time of writing, it can
+be a bit overwhelming, so consider looking at the "[Data Visualization](https://www.kaggle.com/datasets?fileType=csv&tags=13208-Data+Visualization)" category. The link provided only shows datasets saved as CSV-files, and has only about 2.500 datasets.
+
+## Play around!
+
+ggplot2 comes with a lot of functionality. This is the
+list of build-in geoms in ggplot2:
+
+```{r echo = F}
+library(ggplot2)
+library(dplyr)
 lsf.str("package:ggplot2") %>% grep("^geom_", ., value = TRUE)
 
 ```
+ggplot2 is also build as an extensible package, making 
+it relatively easy to build extensions, that does things
+that ggplot2 is not able to on its own. [This page](https://exts.ggplot2.tidyverse.org/) contains a collection of these.
 
-Other online courses
 
-Other kub-datalab courses
+## Get some inspiration!
 
-play around with 30 days of plots eller hvad vi nu har
+The website/book [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) is a great resource for tips, tricks and thinking about visualizations, 
+especially the [directory of visualizations](https://clauswilke.com/dataviz/directory-of-visualizations.html). Note, however, that the author does not provide examples of the code you need to write to make the plots.
 
-Udvidelser etc til ggplot
+There exist an online challenge, [#30DayChartChallenge](https://30daychartchallenge.org/), that 
+challenges you to create a data visualization on a certain topic each day of april. That can be a bit of a mouthful and 
+we are not going to participate ourselves. But! The collection 
+of visualizations from 2022 is humongous, and a great place
+to find ideas.
 
-https://clauswilke.com/dataviz/directory-of-visualizations.html#distributions
+
+## Other online courses
+
+[EdX](https://www.edx.org/search?q=ggplot) offers a multitude of interesting courses - here we link to their ggplot-related courses.
+
+Codecademy also offers free courses (and a certificate of completion if you pay) [This course](https://www.codecademy.com/learn/learn-ggplot-2) offers
+a more indepth introduction to ggplot2.
+
+
 
 
 {% include links.md %}
