@@ -36,32 +36,6 @@ list of build-in geoms in ggplot2:
 
 
 ~~~
-
-Attaching package: 'dplyr'
-~~~
-{: .output}
-
-
-
-~~~
-The following objects are masked from 'package:stats':
-
-    filter, lag
-~~~
-{: .output}
-
-
-
-~~~
-The following objects are masked from 'package:base':
-
-    intersect, setdiff, setequal, union
-~~~
-{: .output}
-
-
-
-~~~
  [1] "geom_abline"            "geom_area"              "geom_bar"              
  [4] "geom_bin_2d"            "geom_bin2d"             "geom_blank"            
  [7] "geom_boxplot"           "geom_col"               "geom_contour"          
