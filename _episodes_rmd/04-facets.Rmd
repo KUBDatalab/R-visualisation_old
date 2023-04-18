@@ -65,13 +65,6 @@ clarities, something that would have been impossible to see in the previous plot
 
 
 
-ggplot(data = diamonds, mapping = aes(x = depth, y = price, color = color)) +
-  geom_point() +
-  facet_wrap(~cut)
-
-ggplot(data = diamonds, mapping = aes(x = depth, y = price)) +
-  geom_point() +
-  facet_wrap(~cut)
 
 
 > ## exercise
