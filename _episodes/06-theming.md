@@ -46,7 +46,7 @@ More exists:
 > same pattern with the scale functions: "scale_" and then the axis, followed
 > by what we did to the axis, eg: "scale_y_log10"
 >
-{.callout}
+{. callout}
 
 ### Even more theming
 

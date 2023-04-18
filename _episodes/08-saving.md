@@ -14,7 +14,6 @@ keypoints:
 source: Rmd
 ---
 
-saving private ggplot
 
 
 

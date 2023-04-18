@@ -99,9 +99,9 @@ This is called "factors" in R.
 The data in a factor can take one of several values, called levels. And the
 order of these levels are what control the order in the plot.
 
-The order can be either arbitrary. Or there can exist an implicit order in the data,
-like with the colour of the diamonds, whare D is the best color, and J is the
-worst. These types of orderede categorical data are called ordinal data.
+The order can be either arbitrary, or there can exist an implicit order in the data,
+like with the color of the diamonds, where D is the best color, and J is the
+worst. These types of ordered categorical data are called ordinal data.
 
 They look like this:
 
@@ -156,8 +156,22 @@ diamonds %>% ggplot(aes(x = carat, y = cut)) +
 ~~~
 {: .language-r}
 
+<img src="../fig/rmd-03-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+
 Here we have the variable we are making boxplots of, on the x-axis,
 and splitting them up in one plot per cut, on the y-axis.
+
+
+> ## What is a boxplot?
+>
+> Boxplots are useful for showing different distributions. The fat line in
+> the middle of the box is the median, the two ends of the box is first and 
+> third quartile, and the two whiskers (or lines) on both sides of the 
+> box shows the minimum and maximum values - excluding outliers, defined for
+> this purpose as values that lies more that 1.5 times the interquartile 
+> range from the box.
+>
+{: .callout}
 
 ## Violinplots
 
