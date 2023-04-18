@@ -36,11 +36,7 @@ ggplot(diamonds, aes(carat, price)) +
 
 <img src="../fig/rmd-06-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
 More exists:
-
-~~~
-Error in default | bw: operations are possible only for numeric, logical or complex types
-~~~
-{: .error}
+<img src="../fig/rmd-06-different_themes-1.png" alt="plot of chunk different_themes" width="612" style="display: block; margin: auto;" />
 
 > ## Notice the pattern?
 >
@@ -103,4 +99,25 @@ diamonds %>%
 Will not give the same result. `theme_dark` has a setting for the way the text
 on the y-axis is shown, and will overwrite the changes done before calling it.
 
+Most of the `elements` of the plot need to be defined in a special way. If we 
+want the "theme" a text element, we set the `axis.text` to be an `element_text()` 
+function with specific arguments to specify *what* we want to do. For the background
+of the plot we are changing a rectangular object, and can set the background
+color like this: 
+
+
+~~~
+diamonds %>% 
+  ggplot(aes(carat, price)) +
+  geom_point() +
+  theme(axis.text.y = element_text(angle= 45),
+        panel.background = element_rect(fill = "red"))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-06-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+Note that we are not setting the `plot.background`, as that would change the 
+background of the entire plot, rather than the background of the actual 
+area on which we are plotting.
+axis.text.y = element_text(angle= 45
 {% include links.md %}

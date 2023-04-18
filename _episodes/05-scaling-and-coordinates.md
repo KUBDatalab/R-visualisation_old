@@ -310,5 +310,69 @@ diamonds %>%
 >
 {: .caution}
 
+## Coloring the scale
+
+Looking at the plot below, the authors of this course get pretty frustrated.
+
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() 
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+
+We are not really able to distinquish the color for "D" and "E". Or for "G" and
+"H". Controlling the colors is important not only for aesthetic reasons, but
+also for actually illustrating what the plot is showing.
+
+Here, the color is introduced by mapping the color of the diamonds to the 
+coloring of the points. This actually is mapping a value to a scale, no different
+from the mapping of the price to the y-axis.
+
+In the same way we can adjust the scale of the y-axis as shown above, we are
+able to adjust the actual colors in the plot. 
+
+The functions for this are (almost) all called `scale_` and then continues
+with `color` if we are coloring points, `fill` if we want to control the 
+fill-color of a solid object in the plot, and finally something that specifies
+either the type of data we are plotting, or specific functionality to control 
+the color. 
+
+Below we adjust the color using the special family of functions `brewer`:
+`scale_color_brewer`. Nice colors, but even worse:
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  scale_color_brewer() +
+  theme(panel.background = element_rect(fill = "black"))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+What we did to change the background will be covered in the next episode.
+
+Finding the optimal colors usually requires a lot of fiddling around. Rather
+than using functions to choose the colors, we can chose the manually, 
+like this:
+
+
+~~~
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
+  geom_point() +
+  scale_color_manual(values=c('#7fc97f','#beaed4','#fdc086','#ffff99','#386cb0','#f0027f','#bf5b17'))
+~~~
+{: .language-r}
+
+<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
+
+The codes #7fc97f are "hex-codes", specifying the colors. You can find websites
+allowing you to chose a color, and get the code. A good place to get suggestions
+for color-pallettes is [Colorbrewer2](https://colorbrewer2.org/).
+
 
 {% include links.md %}
