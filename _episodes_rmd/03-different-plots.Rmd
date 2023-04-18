@@ -84,9 +84,9 @@ This is called "factors" in R.
 The data in a factor can take one of several values, called levels. And the
 order of these levels are what control the order in the plot.
 
-The order can be either arbitrary. Or there can exist an implicit order in the data,
-like with the colour of the diamonds, whare D is the best color, and J is the
-worst. These types of orderede categorical data are called ordinal data.
+The order can be either arbitrary, or there can exist an implicit order in the data,
+like with the color of the diamonds, where D is the best color, and J is the
+worst. These types of ordered categorical data are called ordinal data.
 
 They look like this:
 ```{r}
