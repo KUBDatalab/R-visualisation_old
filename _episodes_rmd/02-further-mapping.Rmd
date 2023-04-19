@@ -125,7 +125,7 @@ identical.
 In principle any kind of shape. But without having to program them
 ourself, these are available directly in ggplot. They are numbered, because it is easier to write "14" than "square box with upwardspointing triangle inside".
 
-```{r point_shapes, echo = F}
+```{r point_shapes, echo = F, warning=F, message=F}
 library(ggpubr)
 ggpubr::show_point_shapes()
 ```
