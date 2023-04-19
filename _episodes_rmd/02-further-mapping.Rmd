@@ -61,6 +61,8 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price), colour = color) +
 What happened to the colour? The colour argument is outside the aes() function.
 That means that we are not mapping data to the colour!
 
+
+
 What else can we map data to?
 
 ```{r}
