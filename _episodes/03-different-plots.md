@@ -29,12 +29,16 @@ common types.
 
 Histograms splits all observations of a variable up in a number of
 "bins". It counts how many observations are in each bin. Then we plot a column
-with a height equivalent to the number of observations for each bin:
+with a height equivalent to the number of observations for each bin.
+
+Note that we here use the pipe to get the `diamonds` data into `ggplot()`. 
+Both methods can be used, and if we need to manipulate the data before plotting,
+it is a common way to get the modified data into `ggplot()`.
 
 
 ~~~
 diamonds %>% 
-  ggplot(aes(carat)) +
+  ggplot(mapping = aes(carat)) +
   geom_histogram()
 ~~~
 {: .language-r}
@@ -61,8 +65,19 @@ diamonds %>%
 {: .language-r}
 
 <img src="../fig/rmd-03-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
-General rules for choosing the correct number of bins exists. We recommend that you experiment with different number of bins to find the
-one you like best.
+
+What number of bins should I choose? There are some general rules for this (some 
+can be found [https://kubdatalab.github.io/forklaringer/12-histogrammer/index.html](here), 
+beware, the page is in Danish.) In general it is our recommendation that you 
+experiment with different number of bins to find the one that best shows your data.
+
+Note that we excluded the `mapping` part of the `ggplot` function. The first
+argument of `ggplot` is always data, and we can get that via the pipe. The 
+second argument is *always* mapping, and therefore we do not *need* to specify it.
+
+In the following we are sometimes going to specify the `mapping` argument. There
+are two reasons for that. One: We have forgotten to be consistent. Two: In some
+cases it is useful to remind ourselves that we are actually mapping data to something.
 
 
 ## Barcharts
@@ -151,7 +166,8 @@ can make several boxplots in one plot:
 
 
 ~~~
-diamonds %>% ggplot(aes(x = carat, y = cut)) +
+diamonds %>% 
+  ggplot(aes(x = carat, y = cut)) +
   geom_boxplot()
 ~~~
 {: .language-r}

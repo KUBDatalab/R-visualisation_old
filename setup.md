@@ -5,7 +5,7 @@ title: Setup
 ## Setup instructions
 
 If you do not have R and Rstudio installed, follow the instructions under the
-heading `Detailed setup instructions`, and return to the next part of this page
+heading `I dont have R and RStudio installed`, and return to the next part of this page
 afterwards.
 
 ### I allready have R and RStudio installed!
@@ -26,8 +26,36 @@ library(tidyverse)
 ~~~
 {: .language-r}
 
+### I'm not sure R and RStudio is updated!
 
-## Detailed setup instructions
+It is a good idea to keep both programs updated!
+
+### Windows
+
+* Open RStudio, and click on "Help" > "Check for updates". If a new version is
+	available, quit RStudio, and download the latest version for RStudio.
+* To check which version of R you are using, start RStudio and the first thing
+  that appears in the console indicates the version of R you are
+  running. Alternatively, you can type `sessionInfo()`, which will also display
+  which version of R you are running. Go on
+  the [CRAN website](https://cran.r-project.org/bin/windows/base/) and check
+  whether a more recent version is available. If so, please download and install
+  it. You can [check here](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-UNinstall-R_003f) for
+  more information on how to remove old versions from your system if you wish to do so.
+
+### macOS
+
+* Open RStudio, and click on "Help" > "Check for updates". If a new version is
+	available, quit RStudio, and download the latest version for RStudio.
+* To check the version of R you are using, start RStudio and the first thing
+  that appears on the terminal indicates the version of R you are running. Alternatively, you can type `sessionInfo()`, which will also display which version of R you are running. Go on
+  the [CRAN website](https://cran.r-project.org/bin/macosx/) and check
+  whether a more recent version is available. If so, please download and install
+  it. In any case, make sure you have at least R 3.3.
+  
+
+
+## I dont have R and RStudio installed
 
 > ## Where to install?
 >
@@ -54,22 +82,6 @@ instructions to install **`tidyverse`**.
 
 ### Windows
 
-#### If you already have R and RStudio installed
-
-* Open RStudio, and click on "Help" > "Check for updates". If a new version is
-	available, quit RStudio, and download the latest version for RStudio.
-* To check which version of R you are using, start RStudio and the first thing
-  that appears in the console indicates the version of R you are
-  running. Alternatively, you can type `sessionInfo()`, which will also display
-  which version of R you are running. Go on
-  the [CRAN website](https://cran.r-project.org/bin/windows/base/) and check
-  whether a more recent version is available. If so, please download and install
-  it. You can [check here](https://cran.r-project.org/bin/windows/base/rw-FAQ.html#How-do-I-UNinstall-R_003f) for
-  more information on how to remove old versions from your system if you wish to do so.
-  
-
-#### If you don't have R and RStudio installed
-
 * Download R from
   the [CRAN website](http://cran.r-project.org/bin/windows/base/release.htm).
 * Run the `.exe` file that was just downloaded.
@@ -84,18 +96,6 @@ Now return to the top of this page and finish the instructions under
 "I allready have R and RStudio installed!"
 
 ### macOS
-
-#### If you already have R and RStudio installed
-
-* Open RStudio, and click on "Help" > "Check for updates". If a new version is
-	available, quit RStudio, and download the latest version for RStudio.
-* To check the version of R you are using, start RStudio and the first thing
-  that appears on the terminal indicates the version of R you are running. Alternatively, you can type `sessionInfo()`, which will also display which version of R you are running. Go on
-  the [CRAN website](https://cran.r-project.org/bin/macosx/) and check
-  whether a more recent version is available. If so, please download and install
-  it. In any case, make sure you have at least R 3.3.
-
-#### If you don't have R and RStudio installed
 
 * Download R from
   the [CRAN website](http://cran.r-project.org/bin/macosx/).

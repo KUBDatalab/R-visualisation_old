@@ -65,6 +65,8 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price), colour = color) +
 What happened to the colour? The colour argument is outside the aes() function.
 That means that we are not mapping data to the colour!
 
+
+
 What else can we map data to?
 
 
@@ -134,13 +136,6 @@ identical.
 
 In principle any kind of shape. But without having to program them
 ourself, these are available directly in ggplot. They are numbered, because it is easier to write "14" than "square box with upwardspointing triangle inside".
-
-
-~~~
-Scale for y is already present.
-Adding another scale for y, which will replace the existing scale.
-~~~
-{: .output}
 
 <img src="../fig/rmd-02-point_shapes-1.png" alt="plot of chunk point_shapes" width="612" style="display: block; margin: auto;" />
 

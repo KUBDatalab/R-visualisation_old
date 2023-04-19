@@ -125,9 +125,10 @@ make individual plots for each combination of clarity and color:
 
 
 ~~~
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
-  geom_point() +
-  facet_grid(clarity ~ color)
+diamonds %>% 
+  ggplot(aes(x = carat, y = price, color = color)) +
+    geom_point() +
+    facet_grid(clarity ~ color)
 ~~~
 {: .language-r}
 
