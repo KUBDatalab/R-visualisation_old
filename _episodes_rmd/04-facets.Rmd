@@ -3,11 +3,12 @@ title: "Facetting"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "What is facetting?"
 objectives:
-- "FIX ME"
+- "Learn to use small multiples in your plots"
 keypoints:
-- "FIX ME"
+- "Facetting can make busy plots more understandable"
+- "Grid facetting in two dimensions allows us to plot even more variables"
 
 source: Rmd
 ---
@@ -63,7 +64,13 @@ clarities, something that would have been impossible to see in the previous plot
 > 
 {: .callout}
 
-
+The fundamental idea behind faceting, is the concept "small multiples", popularised
+by Edward Tufte. He describes it as (resembling) "the frames of a movie: a series 
+of graphics, showing the same combination of variables, indexed by changes in 
+another variable.” The method is also known as "trellis", "lattice", "grid" or
+"panel" charts. They allows us to break down a very "busy" chart, containing too
+much information, making it possible for the reader of the charts to walk
+through them one category at a time, and make comparisons.
 
 
 

@@ -5,11 +5,14 @@ title: "Theming"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "How can I make the plot look good?"
+- "How do I get rid of that grey background?"
+- "How do I get rid of the gridlines?"
 objectives:
-- "FIX ME"
+- "Learn to use different themes"
+- "Learn to adjust the appearance of specific parts of the plot"
 keypoints:
-- "FIX ME"
+- "EVERYTHING in the plot can be customized"
 
 source: Rmd
 ---
@@ -36,7 +39,11 @@ ggplot(diamonds, aes(carat, price)) +
 
 <img src="../fig/rmd-06-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
 More exists:
-<img src="../fig/rmd-06-different_themes-1.png" alt="plot of chunk different_themes" width="612" style="display: block; margin: auto;" />
+
+~~~
+Error in default | bw: operations are possible only for numeric, logical or complex types
+~~~
+{: .error}
 
 > ## Notice the pattern?
 >
@@ -46,7 +53,7 @@ More exists:
 > same pattern with the scale functions: "scale_" and then the axis, followed
 > by what we did to the axis, eg: "scale_y_log10"
 >
-{. callout}
+{: .callout}
 
 ### Even more theming
 
@@ -102,7 +109,7 @@ on the y-axis is shown, and will overwrite the changes done before calling it.
 Most of the `elements` of the plot need to be defined in a special way. If we 
 want the "theme" a text element, we set the `axis.text` to be an `element_text()` 
 function with specific arguments to specify *what* we want to do. For the background
-of the plot we are changing a rectangular object, and can set the background
+of the plot we are changing a rectangular object `element_rect`, and can set the background
 color like this: 
 
 
@@ -119,5 +126,5 @@ diamonds %>%
 Note that we are not setting the `plot.background`, as that would change the 
 background of the entire plot, rather than the background of the actual 
 area on which we are plotting.
-axis.text.y = element_text(angle= 45
+
 {% include links.md %}

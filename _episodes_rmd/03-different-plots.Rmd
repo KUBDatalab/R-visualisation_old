@@ -4,10 +4,13 @@ teaching: 10
 exercises: 5
 questions:
 - "What other types of plots can we make?"
+- "How can we control the order of stuff in plots?"
 objectives:
-- "FIX ME"
+- "Learn how to make histograms, barcharts, boxplots and violinplots"
 keypoints:
-- "FIX ME"
+- "Categorical data, aka factors can control the order of data in plots"
+- "ggplot makes it easy to make many different types of plots"
+- "ggplot have many useful extensions"
 
 source: Rmd
 ---
@@ -25,8 +28,8 @@ library(tidyverse)
 
 # A collection of different types of plots
 
-Scatterplots are very useful, but we often need other types of plots. In this part of the course, we are going to look at some of the more
-common types.
+Scatterplots are very useful, but we often need other types of plots. In this 
+part of the course, we are going to look at some of the more common types.
 
 
 ## Histograms
@@ -75,7 +78,8 @@ Not to be confused with histograms, barcharts count the number of
 observations in different groups. Where the scale in histograms is 
 continuous, and split into bins, the scale in barcharts is discrete. 
 
-Here we map the color-variable to the x-axis in the barchart. `geom_bar` counts the number of observations itself - we do not need to
+Here we map the color-variable to the x-axis in the barchart. `geom_bar` counts 
+the number of observations itself - we do not need to
 provide a count:
 
 ```{r eval=T}
@@ -99,9 +103,9 @@ This is called "factors" in R.
 The data in a factor can take one of several values, called levels. And the
 order of these levels are what control the order in the plot.
 
-The order can be either arbitrary, or there can exist an implicit order in the data,
-like with the color of the diamonds, where D is the best color, and J is the
-worst. These types of ordered categorical data are called ordinal data.
+The order can be either arbitrary, or there can exist an implicit order in the 
+data, like with the color of the diamonds, where D is the best color, and J is 
+the worst. These types of ordered categorical data are called ordinal data.
 
 They look like this:
 ```{r}
@@ -127,7 +131,7 @@ library `forcats` that makes it easier to work with categorical data.
 
 
 
-## boxplots
+## Boxplots
 
 Boxplots are suitable for visualising the distribution of data. 
 We can make a boxplot of a single variable in the data - or we 
@@ -157,7 +161,8 @@ and splitting them up in one plot per cut, on the y-axis.
 ## Violinplots
 
 Boxplots are not necessarily the best option for showing distributions.
-A good alternative could be violinplots. They show a *density plot* - basically a histogram with infinite bins - for each group, blotted symmetrically around an axis:
+A good alternative could be violinplots. They show a *density plot* - basically 
+a histogram with infinite bins - for each group, blotted symmetrically around an axis:
 
 ```{r echo = F}
 diamonds %>% ggplot(aes(carat, y = cut)) +
@@ -183,12 +188,16 @@ diamonds %>% ggplot(aes(carat, y = cut)) +
 
 ## And many more
 
-ggplot2 is born with a multitude of different plots. A complete list of plots will be very long, and take up all the time for this course.
+ggplot2 is born with a multitude of different plots. A complete list of plots 
+will be very long, and take up all the time for this course.
 Take a look at [The R Graph Gallery](https://r-graph-gallery.com/)
-or at [Graphs in R](https://kubdatalab.github.io/R-graphs/) (NB a work in progress), where we will collect weird and wonderful plots, when to use them, when not to 
-use them. And how to make them.
+or at [Graphs in R](https://kubdatalab.github.io/R-graphs/) (NB a work in 
+progress), where we will collect weird and wonderful plots, when to use them, 
+when not to use them. And how to make them.
 
-ggplot2 is written as an extensible package, meaning that developers can create packages making plots that are not included in ggplot2, or introduce more advanced functionality around plots. Two of the more interesting extensions are:
+ggplot2 is written as an extensible package, meaning that developers can create 
+packages making plots that are not included in ggplot2, or introduce more 
+advanced functionality around plots. Two of the more interesting extensions are:
 
 `ggforce` extends ggplot2 with specialised plottypes.
 

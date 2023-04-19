@@ -5,11 +5,11 @@ title: "Saving and exporting"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "How can I save the plots?"
 objectives:
-- "FIX ME"
+- "Learn how to save your plots in different formats"
 keypoints:
-- "FIX ME"
+- "The easiest way to adjust the size of your saved plots is by adjusting the plot window in RStudio"
 
 source: Rmd
 ---
@@ -68,5 +68,7 @@ to these formats:
 * svg
 * wmf (only on windows)
 
+We would like to recommend the "svg" format. That format is a "vector-based" format
+that you can scale to any size you want.
 
 {% include links.md %}

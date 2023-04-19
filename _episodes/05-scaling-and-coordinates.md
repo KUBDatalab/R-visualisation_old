@@ -5,11 +5,19 @@ title: "Scaling and coordinates"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "How can we adjust the scales in a plot?"
+- "How can we zoom-in to specific parts of a plot?"
+- "How can we change the colors of the plot?"
+- "How do I make a pie-chart?"
 objectives:
-- "FIX ME"
+- "Learn to zoom by adjusting scales"
+- "Learn how to make log-scale plots"
+- "Learn why you should not make a pie-chart"
+- "Learn how to control the color-scale"
 keypoints:
-- "FIX ME"
+- "Pie charts are a bad idea!"
+- "Zooming might exclude data if done wrong"
+- "Play around to find the colors you like"
 
 source: Rmd
 ---
@@ -114,7 +122,7 @@ longer have access to them. Let us show - without going deep into what is
 actually happening, the difference.
 
 We can add a smoothing function to a plot, that adds a trendline to the data.
-This smoother is based on all the data available to it. Let us make two plots,
+This "smoother" is based on all the data available to it. Let us make two plots,
 one where we zoom using `ylim`, and one where we zoom using `coord_cartesian`:
 
 
@@ -168,8 +176,11 @@ Warning: Removed 12 rows containing missing values (`geom_point()`).
 {: .output}
 
 <img src="../fig/rmd-05-zoom_comparison-1.png" alt="plot of chunk zoom_comparison" width="612" style="display: block; margin: auto;" />
-The trendlines are very different, because the data they are based on is
-different.
+The trendlines are very different, because the data they are based on, is
+different. Also note that we get one set of warnings about missing data. 
+When we zoom using `ylim` both `geom_smooth`, and `geom_point` are missing data.
+When we zoom using `coord_cartesian` they have access to all data - but do not
+plot it.
 
 ## Changing the coordinate system
 
