@@ -3,11 +3,12 @@ title: "Whats next?"
 teaching: 10
 exercises: 5
 questions:
-- "FIX ME"
+- "What is the next step in learning to plot?"
 objectives:
-- "FIX ME"
+- "Provide tips on where to locate data for plotting"
+- "Provide tips for finding inspiration for plotting"
 keypoints:
-- "FIX ME"
+- "ggplot2 is extensible - a LOT of extensions are available"
 
 source: Rmd
 ---
