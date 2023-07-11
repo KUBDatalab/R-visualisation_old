@@ -36,7 +36,9 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = color)) +
 
 The argument to which we are mapping the values in the column *color* is also called *colour*, making the code look a bit weird.
 
-Are these colours suitable? Probably not. The authors of this coursematerial are not able to distinguish all of the colours. We will return to how to change colours in plots later in this course.
+Are these colours suitable? Probably not. The authors of this course
+material are not able to distinguish all of the colours. We will return to how 
+to change colours in plots later in this course.
 
 > ## Spelling
 > 
