@@ -76,7 +76,10 @@ ggplot(data = diamonds)
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-01-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-01-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-3</p>
+</div>
 This in itself produces an extremely boring plot. But it is a plot, and actually
 contains the data already. What is 
 missing is information on what exactly it is in the dataset we are trying to plot.
@@ -93,7 +96,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price))
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-01-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-01-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
 
 We are not actually seeing any data, because we have not specified the way the
 individual datapoints should be plotted. But we do see that the axes now have values.
@@ -110,7 +116,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-01-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-01-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-5</p>
+</div>
 
 Comparing with the original template, we did not place any mapping in the 
 `<GEOM_FUNCTION>` but rather in the first `ggplot()` function. 

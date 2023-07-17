@@ -32,11 +32,16 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-chunk1-1.png" alt="plot of chunk chunk1" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-02-chunk1-1.png" alt="plot of chunk chunk1" width="612" />
+<p class="caption">plot of chunk chunk1</p>
+</div>
 
 The argument to which we are mapping the values in the column *color* is also called *colour*, making the code look a bit weird.
 
-Are these colours suitable? Probably not. The authors of this coursematerial are not able to distinguish all of the colours. We will return to how to change colours in plots later in this course.
+Are these colours suitable? Probably not. The authors of this course
+material are not able to distinguish all of the colours. We will return to how 
+to change colours in plots later in this course.
 
 > ## Spelling
 > 
@@ -61,7 +66,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price), colour = color) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-chunk2-1.png" alt="plot of chunk chunk2" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-02-chunk2-1.png" alt="plot of chunk chunk2" width="612" />
+<p class="caption">plot of chunk chunk2</p>
+</div>
 What happened to the colour? The colour argument is outside the aes() function.
 That means that we are not mapping data to the colour!
 
@@ -76,7 +84,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, colour = color, size
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-02-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-2</p>
+</div>
 Not at good plot... We need to think about the combination of stuff we want to
 plot. Often two plots are better than trying to cram everything into a single plot.
 
@@ -112,7 +123,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-02-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-02-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-3</p>
+</div>
 `alpha` controls the transparency of the points plotted, and is a handy way of
 handling overplotting, the phenomenon that multiple data points might be 
 identical. 
@@ -137,7 +151,10 @@ identical.
 In principle any kind of shape. But without having to program them
 ourself, these are available directly in ggplot. They are numbered, because it is easier to write "14" than "square box with upwardspointing triangle inside".
 
-<img src="../fig/rmd-02-point_shapes-1.png" alt="plot of chunk point_shapes" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-02-point_shapes-1.png" alt="plot of chunk point_shapes" width="612" />
+<p class="caption">plot of chunk point_shapes</p>
+</div>
 
 
 

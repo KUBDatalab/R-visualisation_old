@@ -25,7 +25,7 @@ library(tidyverse)
 
 ### Small multiples
 
-In one plot we quickly runs into the problem of trying to plot 
+If we only make one plot we quickly runs into the problem of trying to plot 
 too much information in the plot. Here we plot the price against carat,
 color by the color of the diamonds. And represent their clarity by the
 shape of the points:

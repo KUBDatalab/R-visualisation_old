@@ -53,7 +53,10 @@ diamonds %>%
 ~~~
 {: .output}
 
-<img src="../fig/rmd-03-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-2</p>
+</div>
 
 Note that we get a warning from `geom_histogram` that the number of 
 bins by default is set to 30. 30 bins will almost never be the correct
@@ -67,7 +70,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-3</p>
+</div>
 
 What number of bins should I choose? There are some general rules for this (some 
 can be found [https://kubdatalab.github.io/forklaringer/12-histogrammer/index.html](here), 
@@ -101,7 +107,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
 
 ## A small excursion
 
@@ -155,7 +164,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-6</p>
+</div>
 
 `fct_rev` is a function that reverses the order of a factor. It comes from the
 library `forcats` that makes it easier to work with categorical data.
@@ -176,7 +188,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-03-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-7</p>
+</div>
 
 Here we have the variable we are making boxplots of, on the x-axis,
 and splitting them up in one plot per cut, on the y-axis.
@@ -199,7 +214,10 @@ Boxplots are not necessarily the best option for showing distributions.
 A good alternative could be violinplots. They show a *density plot* - basically 
 a histogram with infinite bins - for each group, blotted symmetrically around an axis:
 
-<img src="../fig/rmd-03-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-03-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-8</p>
+</div>
 
 
 > ## exercise

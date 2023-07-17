@@ -34,7 +34,8 @@ our data.
 
 One of the more commonly cited "rules" for plots and graphs is
 that the coordinate system should begin at zero. And ggplot
-does not necessarily give us a coordinate system that begins at zero. So how do we force it to?
+does not necessarily give us a coordinate system that begins at zero. So how do 
+we force it to?
 
 
 ~~~
@@ -44,7 +45,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-2</p>
+</div>
 
 We can control the axes precisely by adding xlim and/or ylim
 to the plot. We need to provide these functions with a 
@@ -61,7 +65,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-3</p>
+</div>
 
 It is nice to be able to control the two axes seperately. 
 Because the coordinate system should not always begin at zero.
@@ -89,12 +96,16 @@ Warning: Removed 12 rows containing missing values (`geom_point()`).
 ~~~
 {: .warning}
 
-<img src="../fig/rmd-05-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
 
 That returns a warning! Some data is not within the limits we
 placed on the y-axis. This might not be a problem. Or it might.
 
-If we are doing more advanced stuff like scaling the axes (eg. logarithmically), cutting of data might be a bad idea.
+If we are doing more advanced stuff like scaling the axes (eg. logarithmically), 
+cutting of data might be a bad idea.
 
 Zooming in on particular areas of the plot is done better 
 using the `coord_cartesian` function:
@@ -108,7 +119,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-cartesian-zoom-1.png" alt="plot of chunk cartesian-zoom" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-cartesian-zoom-1.png" alt="plot of chunk cartesian-zoom" width="612" />
+<p class="caption">plot of chunk cartesian-zoom</p>
+</div>
 
 This will not cut out data from the plot, they are still there
 for other geoms that might need them, they are simply not
@@ -175,7 +189,10 @@ Warning: Removed 12 rows containing missing values (`geom_point()`).
 ~~~
 {: .output}
 
-<img src="../fig/rmd-05-zoom_comparison-1.png" alt="plot of chunk zoom_comparison" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-zoom_comparison-1.png" alt="plot of chunk zoom_comparison" width="612" />
+<p class="caption">plot of chunk zoom_comparison</p>
+</div>
 The trendlines are very different, because the data they are based on, is
 different. Also note that we get one set of warnings about missing data. 
 When we zoom using `ylim` both `geom_smooth`, and `geom_point` are missing data.
@@ -200,7 +217,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-flipped-coords-1.png" alt="plot of chunk flipped-coords" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-flipped-coords-1.png" alt="plot of chunk flipped-coords" width="612" />
+<p class="caption">plot of chunk flipped-coords</p>
+</div>
 
 
 
@@ -230,7 +250,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-log-transform-y-1.png" alt="plot of chunk log-transform-y" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-log-transform-y-1.png" alt="plot of chunk log-transform-y" width="612" />
+<p class="caption">plot of chunk log-transform-y</p>
+</div>
 This plot reveals a gap in the prices. There are no diamonds in this dataset
 with a price between 1454 USD and 1546 USD. The educated guess is an error in 
 the original dataset.
@@ -283,7 +306,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-5-1.png" alt="plot of chunk unnamed-chunk-5" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-5</p>
+</div>
 
 > ## What are polar coordinates?
 >
@@ -333,7 +359,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-6-1.png" alt="plot of chunk unnamed-chunk-6" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-6</p>
+</div>
 
 We are not really able to distinquish the color for "D" and "E". Or for "G" and
 "H". Controlling the colors is important not only for aesthetic reasons, but
@@ -364,7 +393,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-7-1.png" alt="plot of chunk unnamed-chunk-7" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-7</p>
+</div>
 What we did to change the background will be covered in the next episode.
 
 Finding the optimal colors usually requires a lot of fiddling around. Rather
@@ -379,7 +411,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-05-unnamed-chunk-8-1.png" alt="plot of chunk unnamed-chunk-8" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-8</p>
+</div>
 
 The codes #7fc97f are "hex-codes", specifying the colors. You can find websites
 allowing you to chose a color, and get the code. A good place to get suggestions

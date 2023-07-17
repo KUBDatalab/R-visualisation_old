@@ -21,7 +21,7 @@ source: Rmd
 
 ### Small multiples
 
-In one plot we quickly runs into the problem of trying to plot 
+If we only make one plot we quickly runs into the problem of trying to plot 
 too much information in the plot. Here we plot the price against carat,
 color by the color of the diamonds. And represent their clarity by the
 shape of the points:
@@ -56,7 +56,10 @@ Warning: Removed 5445 rows containing missing values (`geom_point()`).
 ~~~
 {: .warning}
 
-<img src="../fig/rmd-04-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-04-unnamed-chunk-2-1.png" alt="plot of chunk unnamed-chunk-2" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-2</p>
+</div>
 
 This is probably not the best way to discover patterns in the data. It is 
 actually so bad that ggplot warns us that we are using too many different shapes.
@@ -75,7 +78,10 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = color)) +
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-04-unnamed-chunk-3-1.png" alt="plot of chunk unnamed-chunk-3" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-3</p>
+</div>
 Here we can see that the price rises more rapidly with size, for the better 
 clarities, something that would have been impossible to see in the previous plot.
 
@@ -139,7 +145,10 @@ diamonds %>%
 ~~~
 {: .language-r}
 
-<img src="../fig/rmd-04-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="../fig/rmd-04-unnamed-chunk-4-1.png" alt="plot of chunk unnamed-chunk-4" width="612" />
+<p class="caption">plot of chunk unnamed-chunk-4</p>
+</div>
 
 Be careful using facets, especially *facet_grid* when you work
 with small datasets. You might end up with too little data in 

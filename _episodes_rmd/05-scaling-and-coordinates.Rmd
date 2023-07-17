@@ -39,7 +39,8 @@ our data.
 
 One of the more commonly cited "rules" for plots and graphs is
 that the coordinate system should begin at zero. And ggplot
-does not necessarily give us a coordinate system that begins at zero. So how do we force it to?
+does not necessarily give us a coordinate system that begins at zero. So how do 
+we force it to?
 
 ```{r}
 diamonds %>% 
@@ -81,7 +82,8 @@ diamonds %>%
 That returns a warning! Some data is not within the limits we
 placed on the y-axis. This might not be a problem. Or it might.
 
-If we are doing more advanced stuff like scaling the axes (eg. logarithmically), cutting of data might be a bad idea.
+If we are doing more advanced stuff like scaling the axes (eg. logarithmically), 
+cutting of data might be a bad idea.
 
 Zooming in on particular areas of the plot is done better 
 using the `coord_cartesian` function:

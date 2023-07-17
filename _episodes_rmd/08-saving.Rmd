@@ -1,7 +1,7 @@
 ---
 title: "Saving and exporting"
-teaching: 10
-exercises: 5
+teaching: 5
+exercises: 0
 questions:
 - "How can I save the plots?"
 objectives:
@@ -33,7 +33,7 @@ RStudio
 ggplot2 also includes a function for saving the last plot
 you made. This function will save it as "myimage.png" in your
 current directory. The image will be 800x600 pixels (px) in size, and with a resolution of 300 dpi.
-```{r eval = F}
+```{r save-image, eval = F}
 ggsave("myimage.png", width = 800, 
        height = 600, units = "px",
        dpi = 300)
