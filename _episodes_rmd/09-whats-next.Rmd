@@ -68,7 +68,11 @@ to find ideas.
 Codecademy also offers free courses (and a certificate of completion if you pay) [This course](https://www.codecademy.com/learn/learn-ggplot-2) offers
 a more indepth introduction to ggplot2.
 
+## Extensions
 
+ggplot2 is build for extensions. And there are many.
+
+* (Hack for ggplot)[https://teunbrand.github.io/ggh4x/] A packages with utilities for doing stuff on the edge of what ggplot is designed for.
 
 
 {% include links.md %}
