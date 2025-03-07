@@ -1,0 +1,135 @@
+current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser
+/opt/hostedtoolcache/Ruby/3.1.2/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/3.1.2/x64/lib/ruby/3.1.0 -r ./siteconf20250307-22551-xvkqvn.rb extconf.rb
+checking for rb_enc_interned_str() in ruby.h... yes
+checking for rb_hash_new_capa() in ruby.h... no
+checking for rb_hash_bulk_insert() in ruby.h... yes
+checking for rb_category_warn() in ruby.h... yes
+checking for strnlen() in string.h... yes
+checking for whether -std=c99 is accepted as CFLAGS... yes
+creating Makefile
+
+current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\= clean
+make[1]: Entering directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'
+Makefile:176: warning: overriding recipe for target 'clean'
+‡m*V:176: warning: ignoring old recipe for target 'clean'
+Makefile:183: warning: overriding recipe for target 'distclean'
+‡m*V:183: warning: ignoring old recipe for target 'distclean'
+Makefile:191: warning: overriding recipe for target 'install-so'
+‡m*V:191: warning: ignoring old recipe for target 'install-so'
+Makefile:201: warning: overriding recipe for target 'pre-install-rb-default'
+‡m*V:201: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:203: warning: overriding recipe for target '.sitearchdir.-.json.-.ext.time'
+‡m*V:203: warning: ignoring old recipe for target '.sitearchdir.-.json.-.ext.time'
+Makefile:213: warning: overriding recipe for target '.cc.o'
+‡m*V:213: warning: ignoring old recipe for target '.cc.o'
+Makefile:217: warning: overriding recipe for target '.cc.S'
+‡m*V:217: warning: ignoring old recipe for target '.cc.S'
+Makefile:221: warning: overriding recipe for target '.mm.o'
+‡m*V:221: warning: ignoring old recipe for target '.mm.o'
+Makefile:225: warning: overriding recipe for target '.mm.S'
+‡m*V:225: warning: ignoring old recipe for target '.mm.S'
+Makefile:229: warning: overriding recipe for target '.cxx.o'
+‡m*V:229: warning: ignoring old recipe for target '.cxx.o'
+Makefile:233: warning: overriding recipe for target '.cxx.S'
+‡m*V:233: warning: ignoring old recipe for target '.cxx.S'
+Makefile:237: warning: overriding recipe for target '.cpp.o'
+‡m*V:237: warning: ignoring old recipe for target '.cpp.o'
+Makefile:241: warning: overriding recipe for target '.cpp.S'
+‡m*V:241: warning: ignoring old recipe for target '.cpp.S'
+Makefile:245: warning: overriding recipe for target '.c.o'
+‡m*V:245: warning: ignoring old recipe for target '.c.o'
+Makefile:249: warning: overriding recipe for target '.c.S'
+‡m*V:249: warning: ignoring old recipe for target '.c.S'
+Makefile:253: warning: overriding recipe for target '.m.o'
+‡m*V:253: warning: ignoring old recipe for target '.m.o'
+Makefile:257: warning: overriding recipe for target '.m.S'
+‡m*V:257: warning: ignoring old recipe for target '.m.S'
+Makefile:261: warning: overriding recipe for target 'parser.so'
+‡m*V:261: warning: ignoring old recipe for target 'parser.so'
+make[1]: Leaving directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'
+
+current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\=
+make[1]: Entering directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'
+Makefile:176: warning: overriding recipe for target 'clean'
+‡ä§ûU:176: warning: ignoring old recipe for target 'clean'
+Makefile:183: warning: overriding recipe for target 'distclean'
+‡ä§ûU:183: warning: ignoring old recipe for target 'distclean'
+Makefile:191: warning: overriding recipe for target 'install-so'
+‡ä§ûU:191: warning: ignoring old recipe for target 'install-so'
+Makefile:201: warning: overriding recipe for target 'pre-install-rb-default'
+‡ä§ûU:201: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:203: warning: overriding recipe for target '.sitearchdir.-.json.-.ext.time'
+‡ä§ûU:203: warning: ignoring old recipe for target '.sitearchdir.-.json.-.ext.time'
+Makefile:213: warning: overriding recipe for target '.cc.o'
+‡ä§ûU:213: warning: ignoring old recipe for target '.cc.o'
+Makefile:217: warning: overriding recipe for target '.cc.S'
+‡ä§ûU:217: warning: ignoring old recipe for target '.cc.S'
+Makefile:221: warning: overriding recipe for target '.mm.o'
+‡ä§ûU:221: warning: ignoring old recipe for target '.mm.o'
+Makefile:225: warning: overriding recipe for target '.mm.S'
+‡ä§ûU:225: warning: ignoring old recipe for target '.mm.S'
+Makefile:229: warning: overriding recipe for target '.cxx.o'
+‡ä§ûU:229: warning: ignoring old recipe for target '.cxx.o'
+Makefile:233: warning: overriding recipe for target '.cxx.S'
+‡ä§ûU:233: warning: ignoring old recipe for target '.cxx.S'
+Makefile:237: warning: overriding recipe for target '.cpp.o'
+‡ä§ûU:237: warning: ignoring old recipe for target '.cpp.o'
+Makefile:241: warning: overriding recipe for target '.cpp.S'
+‡ä§ûU:241: warning: ignoring old recipe for target '.cpp.S'
+Makefile:245: warning: overriding recipe for target '.c.o'
+‡ä§ûU:245: warning: ignoring old recipe for target '.c.o'
+Makefile:249: warning: overriding recipe for target '.c.S'
+‡ä§ûU:249: warning: ignoring old recipe for target '.c.S'
+Makefile:253: warning: overriding recipe for target '.m.o'
+‡ä§ûU:253: warning: ignoring old recipe for target '.m.o'
+Makefile:257: warning: overriding recipe for target '.m.S'
+‡ä§ûU:257: warning: ignoring old recipe for target '.m.S'
+Makefile:261: warning: overriding recipe for target 'parser.so'
+‡ä§ûU:261: warning: ignoring old recipe for target 'parser.so'
+compiling parser.c
+linking shared-object json/ext/parser.so
+make[1]: Leaving directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'
+
+current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser
+make DESTDIR\= install
+make[1]: Entering directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'
+Makefile:176: warning: overriding recipe for target 'clean'
+‡å 	V:176: warning: ignoring old recipe for target 'clean'
+Makefile:183: warning: overriding recipe for target 'distclean'
+‡å 	V:183: warning: ignoring old recipe for target 'distclean'
+Makefile:191: warning: overriding recipe for target 'install-so'
+‡å 	V:191: warning: ignoring old recipe for target 'install-so'
+Makefile:201: warning: overriding recipe for target 'pre-install-rb-default'
+‡å 	V:201: warning: ignoring old recipe for target 'pre-install-rb-default'
+Makefile:203: warning: overriding recipe for target '.sitearchdir.-.json.-.ext.time'
+‡å 	V:203: warning: ignoring old recipe for target '.sitearchdir.-.json.-.ext.time'
+Makefile:213: warning: overriding recipe for target '.cc.o'
+‡å 	V:213: warning: ignoring old recipe for target '.cc.o'
+Makefile:217: warning: overriding recipe for target '.cc.S'
+‡å 	V:217: warning: ignoring old recipe for target '.cc.S'
+Makefile:221: warning: overriding recipe for target '.mm.o'
+‡å 	V:221: warning: ignoring old recipe for target '.mm.o'
+Makefile:225: warning: overriding recipe for target '.mm.S'
+‡å 	V:225: warning: ignoring old recipe for target '.mm.S'
+Makefile:229: warning: overriding recipe for target '.cxx.o'
+‡å 	V:229: warning: ignoring old recipe for target '.cxx.o'
+Makefile:233: warning: overriding recipe for target '.cxx.S'
+‡å 	V:233: warning: ignoring old recipe for target '.cxx.S'
+Makefile:237: warning: overriding recipe for target '.cpp.o'
+‡å 	V:237: warning: ignoring old recipe for target '.cpp.o'
+Makefile:241: warning: overriding recipe for target '.cpp.S'
+‡å 	V:241: warning: ignoring old recipe for target '.cpp.S'
+Makefile:245: warning: overriding recipe for target '.c.o'
+‡å 	V:245: warning: ignoring old recipe for target '.c.o'
+Makefile:249: warning: overriding recipe for target '.c.S'
+‡å 	V:249: warning: ignoring old recipe for target '.c.S'
+Makefile:253: warning: overriding recipe for target '.m.o'
+‡å 	V:253: warning: ignoring old recipe for target '.m.o'
+Makefile:257: warning: overriding recipe for target '.m.S'
+‡å 	V:257: warning: ignoring old recipe for target '.m.S'
+Makefile:261: warning: overriding recipe for target 'parser.so'
+‡å 	V:261: warning: ignoring old recipe for target 'parser.so'
+/usr/bin/install -c -m 0755 parser.so ./.gem.20250307-22551-xvbfzv/json/ext
+make[1]: Leaving directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/json-2.10.1/ext/json/ext/parser'

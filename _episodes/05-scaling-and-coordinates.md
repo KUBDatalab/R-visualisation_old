@@ -92,7 +92,8 @@ diamonds %>%
 
 
 ~~~
-Warning: Removed 12 rows containing missing values (`geom_point()`).
+Warning: Removed 12 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ~~~
 {: .warning}
 
@@ -171,14 +172,16 @@ print(p1 + p2)
 
 
 ~~~
-Warning: Removed 12 rows containing non-finite values (`stat_smooth()`).
+Warning: Removed 12 rows containing non-finite outside the scale range
+(`stat_smooth()`).
 ~~~
 {: .warning}
 
 
 
 ~~~
-Warning: Removed 12 rows containing missing values (`geom_point()`).
+Warning: Removed 12 rows containing missing values or values outside the scale range
+(`geom_point()`).
 ~~~
 {: .warning}
 
