@@ -27,4 +27,11 @@ Some, but certainly not all, of the different types of plots are introduced.
 > 
 {: .prereq}
 
+> ## This site has been updated
+> 
+> We have updated the design of the old R Visualisation course. If you want to
+> find the new version, you can follow [this link.](https://kubdatalab.github.io/R-visualisation/)
+{: .callout}
+
+
 {% include links.md %}
