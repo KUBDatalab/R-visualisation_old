@@ -1,5 +1,5 @@
 current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/commonmarker-0.23.11/ext/commonmarker
-/opt/hostedtoolcache/Ruby/3.1.2/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/3.1.2/x64/lib/ruby/3.1.0 -r ./siteconf20250307-22551-zmih3u.rb extconf.rb
+/opt/hostedtoolcache/Ruby/3.1.2/x64/bin/ruby -I /opt/hostedtoolcache/Ruby/3.1.2/x64/lib/ruby/3.1.0 -r ./siteconf20250307-20006-68cp19.rb extconf.rb
 creating Makefile
 
 current directory: /home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/commonmarker-0.23.11/ext/commonmarker
@@ -243,5 +243,5 @@ make[1]: Entering directory '/home/runner/work/R-visualisation_old/R-visualisati
 Makefile:261: warning: overriding recipe for target 'commonmarker.so'
 make[1]: Entering directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/commonmarker-0.23.11/ext/commonmarker'
 :261: warning: ignoring old recipe for target 'commonmarker.so'
-/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20250307-22551-f0j95n/commonmarker
+/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20250307-20006-k8znbu/commonmarker
 make[1]: Leaving directory '/home/runner/work/R-visualisation_old/R-visualisation_old/.vendor/bundle/ruby/3.1.0/gems/commonmarker-0.23.11/ext/commonmarker'
